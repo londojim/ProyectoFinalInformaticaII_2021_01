@@ -21,6 +21,13 @@ private slots:
     void on_pushButton_clicked();
 
 private:
-    Ui::MainWindow *ui;
+    Ui::MainWindow *ui;         //Se crea un atributo de clase MainWindow, y un apuntador ui a tipo MainWindow
+
+    QGraphicsScene *scena;      //Se crea un objeto tipo escena para el inicio de1 juego
+    /*
+    QGraphicsScene *scenaN1;    //Se crea un objeto tipo escena para el nivel 1
+    QGraphicsScene *scenaN2;    //Se crea un objeto tipo escena para el nivel 2
+    */
+
 };
 #endif // MAINWINDOW_H

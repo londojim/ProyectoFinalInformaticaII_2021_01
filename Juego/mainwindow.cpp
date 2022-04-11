@@ -1,5 +1,9 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "personaje.h"
+#include "estudiante.h"
+
+using namespace std;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -7,6 +11,16 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 }
+
+Estudiante jugador1("Katherin",50,50,5);
+
+
+
+
+
+
+
+
 
 MainWindow::~MainWindow()
 {
