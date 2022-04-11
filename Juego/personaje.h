@@ -3,12 +3,16 @@
 #include <QGraphicsItem>
 #include <string>
 #include <QPainter>
+#include <QPixmap>
 
+#include <QGraphicsPixmapItem>
+#include <QObject>
+#include <QGraphicsItem>
 
 using namespace std;
 
-class Personaje: public QGraphicsItem
-{
+class Personaje: public QObject, public QGraphicsPixmapItem{
+    Q_OBJECT
 
 
     //Atributos
@@ -23,33 +27,15 @@ protected:
     Personaje(string nombre, int posx,int posy);
     ~Personaje();
 
+public:
     //Para solucionar el error de que personaje sea clase abstracta, les defino comportamiento a estas dos funciones virtuales, que son heredadas de QGraphicsItem
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
                QWidget *widget = nullptr);
 
 
+
     //Métodos
-    /*
-    void MoveUp();      //Método para mover arriba
-    void MoveDown();    //Método para mover abajo
-    void MoveRigth();   //Método para mover a la derecha
-    void MoveLeft();    //Método para mover a la izquierda
-    */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 };
 

@@ -4,6 +4,8 @@
 #include <QDialog>
 #include<QGraphicsItem>
 #include<QPainter>
+
+
 using namespace std;
 
 

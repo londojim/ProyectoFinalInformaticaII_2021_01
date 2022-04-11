@@ -1,9 +1,24 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include <QMainWindow>
+#include <QGraphicsScene>
+#include <QGraphicsView>
+#include <qgraphicsview.h>
+#include <string>
+
+#include <QKeyEvent>
+
+
+#include <QList>
+#include <QTimer>
+
 
 #include <ventana1.h>
 
+#include <personaje.h>
+#include <estudiante.h>
+#include <profesor.h>
+#include <QList>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -16,18 +31,22 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    //void keyPressEvent(QKeyEvent *e);
+
+
 
 private slots:
     void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;         //Se crea un atributo de clase MainWindow, y un apuntador ui a tipo MainWindow
+    QGraphicsScene *escena;      //Se crea un objeto tipo escena
 
-    QGraphicsScene *scena;      //Se crea un objeto tipo escena para el inicio de1 juego
-    /*
-    QGraphicsScene *scenaN1;    //Se crea un objeto tipo escena para el nivel 1
-    QGraphicsScene *scenaN2;    //Se crea un objeto tipo escena para el nivel 2
-    */
+    Estudiante *jugador;
+    Personaje *j;
+
+    QMainWindow *w1;   //Apuntador a la ventana de inicio
+    QMainWindow *i;   //Apuntador a la ventana de inglés
 
 };
 #endif // MAINWINDOW_H
