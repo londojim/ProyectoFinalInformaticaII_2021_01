@@ -2,6 +2,7 @@
 #include<Jugador.h>
 #include<Distractor.h>
 
+
 Game::Game(QWidget *parent)
 {
     //crear la scena
@@ -28,11 +29,14 @@ Game::Game(QWidget *parent)
 
 
     //Creamos un distractor
-
     amigo = new Distractor();         //Como heredó todo de RectItem podemos usar esos métodos
     amigo->setRect(0,0,100,100);
-    amigo->setPos(400,500);         //Cambiamos de posición
+    amigo->setPos(675,500);         //Cambiamos de posición
     scene->addItem(amigo);
+
+    //Creamos un Timer para los disparos periodicos
+
+    connect(timer, SIGNAL());
 
 
     show();

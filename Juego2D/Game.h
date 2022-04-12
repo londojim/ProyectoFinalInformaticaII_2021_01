@@ -7,6 +7,7 @@
 #include<Jugador.h>
 #include<Distractor.h>
 
+
 // Clase que contendrá la escena donde pondremos los objetos que van a interactuar
 class Game: public QGraphicsView{ //Hereda así para poder crear el view donde pondremos todo en escena
     //Q_OBJECT

@@ -13,9 +13,13 @@ void Jugador::keyPressEvent(QKeyEvent *e)
     //mover al estudiante de derecha a izquierda
 
     if(e->key()== Qt::Key_Left){    //Si se presiona la tecla "flecha derecha"
+        if(pos().x()>0 ){           //Si en el eje x la posición es mayor a x: si se puede mover
         setPos(x()-10,y());
+        }
     }
     else if (e->key() == Qt::Key_Right){
-        setPos(x()+10,y());
+        if(pos().x()+rect().width() < scene()->width()){  //pos+tamaño rectangulo (jugador) < ancho escena: lo mueve
+            setPos(x()+10,y());
+        }
     }
 }
