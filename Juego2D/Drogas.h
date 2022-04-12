@@ -7,8 +7,9 @@
 class Drogas: public QObject, public QGraphicsRectItem{
     Q_OBJECT
 public:
-    Drogas();   //Las drogas son disparadas por un objeto tipo distractor
-    void movimientoDroga();  //Señal conectada al timer para tener un movimiento periodico
+    Drogas();                   //Las drogas son disparadas por un objeto tipo distractor
+public slots:
+    void movimientoDroga();     //Señal conectada al timer para tener un movimiento periodico
 
 };
 

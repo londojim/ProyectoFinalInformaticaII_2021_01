@@ -19,7 +19,10 @@ public:
     QGraphicsScene *scene;   //Para la escena que tendremos
 
     Jugador * estudiante;   //Se crea el jugador
-    Distractor * amigo;   //Se crea un distractor
+    Distractor * amigo;     //Se crea un distractor
+    Distractor * consola;
+    Distractor * cama;
+
     /*
     Score * score;
     Health * health;
