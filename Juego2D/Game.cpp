@@ -20,5 +20,8 @@ Game::Game(QWidget *parent)
     estudiante = new Jugador();         //Como heredó todo de RectItem podemos usar esos métodos
     estudiante->setRect(0,0,100,100);   //Ubicado en el origen. Tamaño 100x100
     estudiante->setPos(400,500);        //Cambiamos de posición
+    //Para el movimiento del estudiante
+    estudiante->setFlag(QGraphicsItem::ItemIsFocusable);
+    estudiante->setFocus();
     scene->addItem(estudiante);
 }
