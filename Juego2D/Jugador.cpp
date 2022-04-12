@@ -2,12 +2,13 @@
 #include<QGraphicsScene>
 #include<QKeyEvent>         //Para que reconozca pulsaciones del teclado
 
+
 Jugador::Jugador(QGraphicsItem *parent)
 {
 
 }
 
-void Jugador::KeyPressEvent(QKeyEvent *e)
+void Jugador::keyPressEvent(QKeyEvent *e)
 {
     //mover al estudiante de derecha a izquierda
 

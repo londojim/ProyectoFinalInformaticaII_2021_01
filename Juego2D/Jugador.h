@@ -11,11 +11,8 @@ class Jugador: public QObject, public QGraphicsRectItem{
 public:
     Jugador(QGraphicsItem *parent = 0); //EL constructor por defecto asigna algo y evitamos posibles errores
 
-    void KeyPressEvent(QKeyEvent *e);   //Para leer pulsaciones del teclado
-
-
+    void keyPressEvent(QKeyEvent *e);   //Para leer pulsaciones del teclado
 
 };
-
 
 #endif // JUGADOR_H

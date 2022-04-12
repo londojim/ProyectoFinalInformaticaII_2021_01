@@ -1,5 +1,6 @@
 #include<Game.h>
 #include<Jugador.h>
+#include<Distractor.h>
 
 Game::Game(QWidget *parent)
 {
@@ -20,8 +21,19 @@ Game::Game(QWidget *parent)
     estudiante = new Jugador();         //Como heredó todo de RectItem podemos usar esos métodos
     estudiante->setRect(0,0,100,100);   //Ubicado en el origen. Tamaño 100x100
     estudiante->setPos(400,500);        //Cambiamos de posición
-    //Para el movimiento del estudiante
+    //Para el movimiento del jugador
     estudiante->setFlag(QGraphicsItem::ItemIsFocusable);
     estudiante->setFocus();
     scene->addItem(estudiante);
+
+
+    //Creamos un distractor
+
+    amigo = new Distractor();         //Como heredó todo de RectItem podemos usar esos métodos
+    amigo->setRect(0,0,100,100);
+    amigo->setPos(400,500);         //Cambiamos de posición
+    scene->addItem(amigo);
+
+
+    show();
 }
