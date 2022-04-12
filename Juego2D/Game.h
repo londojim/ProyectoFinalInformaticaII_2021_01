@@ -18,6 +18,7 @@ public:
     //void menu();
 
     QGraphicsScene *scene;   //Para la escena que tendremos
+    QGraphicsScene *sceneN1;
 
     Jugador * estudiante;   //Se crea el jugador
     AmigoD * amigo;     //Se crea un distractor
