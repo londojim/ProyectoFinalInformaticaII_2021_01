@@ -31,6 +31,7 @@ public:
     void MoverAbajo();    //Método para mover abajo
     void MoverDerecha();   //Método para mover a la derecha
     void MoverIzquierda();    //Método para mover a la izquierda
+    setPixmap();
 
 
 };

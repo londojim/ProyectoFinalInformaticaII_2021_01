@@ -5,14 +5,16 @@
 #include <QPainter>
 #include <QPixmap>
 
+
 #include <QGraphicsPixmapItem>
 #include <QObject>
 #include <QGraphicsItem>
 
 using namespace std;
 
-class Personaje: public QObject, public QGraphicsPixmapItem{
-    Q_OBJECT
+class Personaje: public QGraphicsItem
+{
+public:
 
 
     //Atributos
