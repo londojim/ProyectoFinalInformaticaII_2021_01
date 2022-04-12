@@ -1,6 +1,9 @@
 #include<Game.h>
 #include<Jugador.h>
 #include<Distractor.h>
+#include<Asignaturas.h>
+#include<AmigoD.h>
+#include<QTimer>
 
 
 Game::Game(QWidget *parent)
@@ -23,20 +26,28 @@ Game::Game(QWidget *parent)
     estudiante->setFocus();
     scene->addItem(estudiante);
     /***********CREACIÓN DISTRACTORES****************/
-    amigo = new Distractor();           //Como heredó todo de RectItem podemos usar esos métodos
+    amigo = new AmigoD();           //Como heredó todo de RectItem podemos usar esos métodos
     amigo->setPos(675,500);             //Cambiamos de posición
     scene->addItem(amigo);
     /***************************/
-    consola = new Distractor();         //Como heredó todo de RectItem podemos usar esos métodos
+    consola = new Distractor();
     consola->setPos(100,200);           //Dibujamos la consola
     scene->addItem(consola);
     /***************************/
-    cama = new Distractor();            //Como heredó todo de RectItem podemos usar esos métodos
-    cama->setPos(100,200);              //Dibujamos la consola
+    cama = new Distractor();
+    cama->setPos(400,150);
     scene->addItem(cama);
     //Movimiento de los distractores
 
+    /******************************/
+    mat = new Asignaturas();
+    mat->setPos(450,300);
+    scene->addItem(mat);
 
+
+    QTimer *timer = new QTimer();
+    QObject::connect(timer, SIGNAL(timeout()),amigo, SLOT(Disparar()));
+    timer->start(1000);
 
 
     show();
