@@ -13,7 +13,7 @@ void AmigoD::Disparar()
     Drogas *droga = new Drogas();
     droga->setPos(x(),y());  //Del centro de alto
     scene()->addItem(droga);
-    qDebug()<<"Se esta disparando";
+    //qDebug()<<"Se esta disparando";
 }
 
 void AmigoD::movAmigoD()
