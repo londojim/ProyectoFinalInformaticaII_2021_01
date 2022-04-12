@@ -9,7 +9,7 @@ Jugador::Jugador(QGraphicsItem *parent)
 
 void Jugador::KeyPressEvent(QKeyEvent *e)
 {
-    //mover al estudiante
+    //mover al estudiante de derecha a izquierda
 
     if(e->key()== Qt::Key_Left){    //Si se presiona la tecla "flecha derecha"
         setPos(x()-10,y());
