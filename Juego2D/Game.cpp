@@ -36,7 +36,7 @@ Game::Game(QWidget *parent)
 
     //Creamos un Timer para los disparos periodicos
 
-    connect(timer, SIGNAL());
+
 
 
     show();
