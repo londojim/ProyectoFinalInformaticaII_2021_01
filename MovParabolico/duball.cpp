@@ -55,7 +55,8 @@ void DuBall::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
   (void)widget;//para  deshabilitar la variable widget
     painter->setBrush(Qt::red);//se rellena de color rojo el interior de la figura
     painter->drawEllipse( QPointF(m_pos_x,m_pos_y),m_width,m_height);
-    painter->drawRect(boundingRect());
+    //painter->setBrush(Qt::NoBrush);//para que el rectangulo no se pinte con relleno
+    //painter->drawRect(boundingRect());//Crea el rectangulo circunscrito al circulo
 }
 
 DuBall::DuBall(double x, double y, double w, double h, QGraphicsItem *parent)

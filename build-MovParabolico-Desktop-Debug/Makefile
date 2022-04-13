@@ -56,12 +56,16 @@ SOURCES       = ../MovParabolico/duball.cpp \
 		../MovParabolico/duscene.cpp \
 		../MovParabolico/duthread.cpp \
 		../MovParabolico/main.cpp \
-		../MovParabolico/widget.cpp moc_widget.cpp
+		../MovParabolico/widget.cpp moc_duscene.cpp \
+		moc_duthread.cpp \
+		moc_widget.cpp
 OBJECTS       = duball.o \
 		duscene.o \
 		duthread.o \
 		main.o \
 		widget.o \
+		moc_duscene.o \
+		moc_duthread.o \
 		moc_widget.o
 DIST          = /usr/lib/qt/mkspecs/features/spec_pre.prf \
 		/usr/lib/qt/mkspecs/common/unix.conf \
@@ -872,9 +876,19 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/qt/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++1z -Wall -Wextra -dM -E -o moc_predefs.h /usr/lib/qt/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_widget.cpp
+compiler_moc_header_make_all: moc_duscene.cpp moc_duthread.cpp moc_widget.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_widget.cpp
+	-$(DEL_FILE) moc_duscene.cpp moc_duthread.cpp moc_widget.cpp
+moc_duscene.cpp: ../MovParabolico/duscene.h \
+		moc_predefs.h \
+		/usr/bin/moc
+	/usr/bin/moc $(DEFINES) --include /home/dalj/Qt/MovParabolico/build-MovParabolico-Desktop-Debug/moc_predefs.h -I/usr/lib/qt/mkspecs/linux-g++ -I/home/dalj/Qt/MovParabolico/MovParabolico -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I. -I/usr/include/c++/11.2.0 -I/usr/include/c++/11.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/11.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed -I/usr/include ../MovParabolico/duscene.h -o moc_duscene.cpp
+
+moc_duthread.cpp: ../MovParabolico/duthread.h \
+		moc_predefs.h \
+		/usr/bin/moc
+	/usr/bin/moc $(DEFINES) --include /home/dalj/Qt/MovParabolico/build-MovParabolico-Desktop-Debug/moc_predefs.h -I/usr/lib/qt/mkspecs/linux-g++ -I/home/dalj/Qt/MovParabolico/MovParabolico -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I. -I/usr/include/c++/11.2.0 -I/usr/include/c++/11.2.0/x86_64-pc-linux-gnu -I/usr/include/c++/11.2.0/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed -I/usr/include ../MovParabolico/duthread.h -o moc_duthread.cpp
+
 moc_widget.cpp: ../MovParabolico/widget.h \
 		moc_predefs.h \
 		/usr/bin/moc
@@ -904,7 +918,9 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 duball.o: ../MovParabolico/duball.cpp ../MovParabolico/duball.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o duball.o ../MovParabolico/duball.cpp
 
-duscene.o: ../MovParabolico/duscene.cpp ../MovParabolico/duscene.h
+duscene.o: ../MovParabolico/duscene.cpp ../MovParabolico/duscene.h \
+		../MovParabolico/duball.h \
+		../MovParabolico/duthread.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o duscene.o ../MovParabolico/duscene.cpp
 
 duthread.o: ../MovParabolico/duthread.cpp ../MovParabolico/duthread.h
@@ -914,8 +930,15 @@ main.o: ../MovParabolico/main.cpp ../MovParabolico/widget.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../MovParabolico/main.cpp
 
 widget.o: ../MovParabolico/widget.cpp ../MovParabolico/widget.h \
+		../MovParabolico/duscene.h \
 		ui_widget.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o widget.o ../MovParabolico/widget.cpp
+
+moc_duscene.o: moc_duscene.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_duscene.o moc_duscene.cpp
+
+moc_duthread.o: moc_duthread.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_duthread.o moc_duthread.cpp
 
 moc_widget.o: moc_widget.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_widget.o moc_widget.cpp
