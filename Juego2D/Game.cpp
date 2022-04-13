@@ -68,6 +68,7 @@ show();
     scene1->setSceneRect(0,0,800,600);   //En el origen; redefinimos alto y ancho
     //music = new QMediaPlayer();
     setScene(scene1);    //Para poder visualizar la escena
+    nota = new Puntaje();
     //***********FIJAR LA ESCENA HORIZONTAL Y VERTICALMENTE****************
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);

@@ -19,8 +19,8 @@ Distractor::Distractor(QGraphicsItem *parent)
 
 void Distractor::movDistractores()
 {
-    int velx =0.5;
-    int vely=0.5;int dt=2;
+    //int velx =0.5;
+    //int vely=0.5;int dt=2;
     //setRotation(velx);
 
     /*
@@ -48,8 +48,8 @@ void Distractor::movDistractores()
         if(typeid(  *(colliding_items[i])) == typeid(Jugador) ){//typeid retorna tipo de clase/objeto que estamos mirando
             game->nota->disminuir();
 
-            delete colliding_items[i];
-            delete this;
+            //delete colliding_items[i];
+            //delete this;
             return;
 
         }

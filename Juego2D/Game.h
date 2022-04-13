@@ -19,7 +19,7 @@ public:
     //void menu();
 
     //QGraphicsScene *scene;   //Para la escena que tendremos
-    QGraphicsScene *scene1;
+   QGraphicsScene *scene1;
 
     Jugador * estudiante;
     AmigoD  * amigo;
