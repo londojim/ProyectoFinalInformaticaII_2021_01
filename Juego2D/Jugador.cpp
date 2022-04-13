@@ -1,8 +1,9 @@
 #include<Jugador.h>
 #include<QGraphicsScene>
 #include<QKeyEvent>         //Para que reconozca pulsaciones del teclado
-
-
+#include<Game.h>
+extern Game *game;  //Llamamos una vble externa para interactuar con ella
+extern Jugador *estudiante;
 Jugador::Jugador(QGraphicsItem *parent)
 {
 
@@ -32,4 +33,24 @@ void Jugador::keyPressEvent(QKeyEvent *e)
             setPos(x(),y()+10);
             }
         }
+
+
+    QList <QGraphicsItem *> colliding_items = collidingItems(); //Lista de QGraphicsItem.
+    //Devuelve una lista de todos los elementos que están colisionando con la droga disparada
+    for(int i=0, n=colliding_items.size(); i<n; i++ ){ //Mientras i<n: aumente i
+
+
+        //Si colisiona con estudiante: la calificación baja
+        if(typeid(  *(colliding_items[i])) == typeid(Distractor) ){//typeid retorna tipo de clase/objeto que estamos mirando
+
+            game->nota->disminuir();
+            game->estudiante->setPos(10,y());
+            //delete colliding_items[i];
+            //delete this;
+
+            return ;
+
+        }
+    }
+
 }

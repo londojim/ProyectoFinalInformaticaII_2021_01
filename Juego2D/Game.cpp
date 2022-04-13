@@ -19,8 +19,7 @@ Game::Game(QWidget *parent)
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize(800,600);
-    scene->addText("Nivel 2")->setFont(QFont("Trajan Pro",20));
-
+    scene->addText("Nivel 2")->setPos(400,0);//->setFont(QFont("Trajan Pro",20));
     nota = new Puntaje();
     scene->addItem(nota);
     //***********CREACIÓN JUGADOR*********************
@@ -69,11 +68,12 @@ show();
     //music = new QMediaPlayer();
     setScene(scene1);    //Para poder visualizar la escena
     nota = new Puntaje();
+    scene1->addItem(nota);
     //***********FIJAR LA ESCENA HORIZONTAL Y VERTICALMENTE****************
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize(800,600);
-    scene1->addText("Nivel 1")->setFont(QFont("Trajan Pro",20));
+    scene1->addText("Nivel 1")->setPos(400,0);//->setFont(QFont("Trajan Pro",20));
     //***********CREACIÓN JUGADOR*********************
     estudiante = new Jugador();         //Como heredó todo de RectItem podemos usar esos métodos
     estudiante->setRect(0,500,50,80);   //Ubicado en el origen. Tamaño 50X80
@@ -109,3 +109,4 @@ show();
     show();
 
 }
+
