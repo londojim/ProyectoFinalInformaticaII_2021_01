@@ -23,8 +23,8 @@ void Drogas::movDroga()
         //Si colisiona con estudiante: Reprueba inmediatamente.
 
         if(typeid(  *(colliding_items[i])) == typeid(Jugador) ){//typeid retorna tipo de clase/objeto que estamos mirando
-            //delete colliding_items[i];
-            //delete this;
+            delete colliding_items[i];
+            delete this;
             return;
             //NOTA: PENDIENTE QUE TAMBIÉN BORRE LA ESCENA Y LE PONGA UN GAMEOVER
         }

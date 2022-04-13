@@ -9,7 +9,6 @@
 Game::Game(QWidget *parent)
 {
 
-/*
     //***********CREACIÓN ESCENA NIVEL 2****************
     scene = new QGraphicsScene();
     scene->setSceneRect(0,0,800,600);   //En el origen; redefinimos alto y ancho
@@ -59,9 +58,16 @@ Game::Game(QWidget *parent)
     timer->start(3000);
     //***************************
 show();
-*/
+/*
+    if(&nota){
+        VReto *vIngles = new VReto;
+        vIngles->show();
+
+    }
+    */
 
 
+/*
     //***********CREACIÓN ESCENA NIVEL 1****************
     scene1 = new QGraphicsScene();
     scene1->setSceneRect(0,0,800,600);   //En el origen; redefinimos alto y ancho
@@ -101,12 +107,12 @@ show();
     scene1->addItem(english);
     scene1->addText("Inglés")->setPos(565,200);
     //***********DISPAROS DE AMIGO****************
-    QTimer *timer = new QTimer();
+    //QTimer *timer = new QTimer();
     QObject::connect(timer, SIGNAL(timeout()),amigo, SLOT(Disparar()));
     timer->start(5000);
     //***************************
 
     show();
-
+*/
 }
 

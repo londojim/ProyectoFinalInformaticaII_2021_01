@@ -16,7 +16,8 @@ SOURCES += \
     Game.cpp \
     Jugador.cpp \
     Puntaje.cpp \
-    main.cpp
+    main.cpp \
+    vreto.cpp
 
 HEADERS += \
     AmigoD.h \
@@ -25,7 +26,8 @@ HEADERS += \
     Drogas.h \
     Game.h \
     Jugador.h \
-    Puntaje.h
+    Puntaje.h \
+    vreto.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

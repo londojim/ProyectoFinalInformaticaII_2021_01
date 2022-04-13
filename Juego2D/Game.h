@@ -9,6 +9,7 @@
 #include<Asignaturas.h>
 #include<AmigoD.h>
 #include<Puntaje.h>
+#include<vreto.h>
 
 // Clase que contendrá la escena donde pondremos los objetos que van a interactuar
 class Game: public QGraphicsView{ //Hereda así para poder crear el view donde pondremos todo en escena
@@ -30,6 +31,11 @@ public:
     Asignaturas * lecto;
     Asignaturas * mat;
     Puntaje * nota;
+
+    //Pruebas para las ventanas emergentes
+    int numIntentos;
+    int numNivel;
+
 
     /*
     Score * score;

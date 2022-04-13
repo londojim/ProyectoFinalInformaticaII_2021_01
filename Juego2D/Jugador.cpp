@@ -41,8 +41,7 @@ void Jugador::keyPressEvent(QKeyEvent *e)
         if(typeid(  *(colliding_items[i])) == typeid(Distractor) ){//typeid retorna tipo de clase/objeto que estamos mirando
             game->nota->disminuir();
             game->estudiante->setPos(10,y()); //Reubicamos el jugador para evitar que detecte otra colision inmediatamente
-            delete colliding_items[i];
-            delete this;
+
             return ;
         }
     }
