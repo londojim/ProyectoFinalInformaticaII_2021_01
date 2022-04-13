@@ -24,32 +24,26 @@ void Jugador::keyPressEvent(QKeyEvent *e)
         }
     }
     else if (e->key() == Qt::Key_Up){
-        if(pos().y()+rect().width() < scene()->height()){
+        //if(pos().y()){
             setPos(x(),y()-10);
-        }
+        //}
     }
     else if (e->key() == Qt::Key_Down){
-        if(pos().y()+rect().width() < scene()->height()){
+        if(pos().y()){
             setPos(x(),y()+10);
             }
         }
 
-
     QList <QGraphicsItem *> colliding_items = collidingItems(); //Lista de QGraphicsItem.
     //Devuelve una lista de todos los elementos que están colisionando con la droga disparada
     for(int i=0, n=colliding_items.size(); i<n; i++ ){ //Mientras i<n: aumente i
-
-
         //Si colisiona con estudiante: la calificación baja
         if(typeid(  *(colliding_items[i])) == typeid(Distractor) ){//typeid retorna tipo de clase/objeto que estamos mirando
-
             game->nota->disminuir();
-            game->estudiante->setPos(10,y());
-            //delete colliding_items[i];
-            //delete this;
-
+            game->estudiante->setPos(10,y()); //Reubicamos el jugador para evitar que detecte otra colision inmediatamente
+            delete colliding_items[i];
+            delete this;
             return ;
-
         }
     }
 

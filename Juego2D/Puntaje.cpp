@@ -1,7 +1,7 @@
 #include<QFont>
 #include<Puntaje.h>
-#include <chrono>
-#include <thread>
+//#include <chrono> //Para la pausa en el juego al detectar la colision
+//#include <thread>
 
 Puntaje::Puntaje(QGraphicsItem *parent)
 {
@@ -22,7 +22,8 @@ void Puntaje::disminuir()
 {
     nota-=10;
     setPlainText(QString("Score: ")+QString::number(nota));
-    //std::this_thread::sleep_for (std::chrono::seconds(1));
+    //std::this_thread::sleep_for (std::chrono::seconds(1)); //Para evitar que el puntaje se reste
+                                                               //varias veces mientras el jugador se aparta
 
 }
 
