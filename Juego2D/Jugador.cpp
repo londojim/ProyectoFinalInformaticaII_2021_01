@@ -14,7 +14,7 @@ void Jugador::keyPressEvent(QKeyEvent *e)
 
     if(e->key()== Qt::Key_Left){    //Si se presiona la tecla "flecha derecha"
         if(pos().x()>0 ){           //Si en el eje x la posición es mayor a x: si se puede mover
-        setPos(x()-10,y());
+            setPos(x()-10,y());
         }
     }
     else if (e->key() == Qt::Key_Right){
@@ -22,4 +22,14 @@ void Jugador::keyPressEvent(QKeyEvent *e)
             setPos(x()+10,y());
         }
     }
+    else if (e->key() == Qt::Key_Up){
+        if(pos().y()+rect().width() < scene()->height()){
+            setPos(x(),y()-10);
+        }
+    }
+    else if (e->key() == Qt::Key_Down){
+        if(pos().y()+rect().width() < scene()->height()){
+            setPos(x(),y()+10);
+            }
+        }
 }

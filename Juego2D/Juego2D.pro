@@ -15,6 +15,7 @@ SOURCES += \
     Drogas.cpp \
     Game.cpp \
     Jugador.cpp \
+    Puntaje.cpp \
     main.cpp
 
 HEADERS += \
@@ -23,7 +24,8 @@ HEADERS += \
     Distractor.h \
     Drogas.h \
     Game.h \
-    Jugador.h
+    Jugador.h \
+    Puntaje.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

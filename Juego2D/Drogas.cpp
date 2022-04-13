@@ -26,6 +26,7 @@ void Drogas::movDroga()
             delete colliding_items[i];
             delete this;
             return;
+            //NOTA: PENDIENTE QUE TAMBIÉN BORRE LA ESCENA Y LE PONGA UN GAMEOVER
         }
     }
 

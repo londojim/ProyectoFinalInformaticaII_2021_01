@@ -8,6 +8,7 @@
 #include<Distractor.h>
 #include<Asignaturas.h>
 #include<AmigoD.h>
+#include<Puntaje.h>
 
 // Clase que contendrá la escena donde pondremos los objetos que van a interactuar
 class Game: public QGraphicsView{ //Hereda así para poder crear el view donde pondremos todo en escena
@@ -17,8 +18,8 @@ public:
 
     //void menu();
 
-    QGraphicsScene *scene;   //Para la escena que tendremos
-    //QGraphicsScene *scene1;
+    //QGraphicsScene *scene;   //Para la escena que tendremos
+    QGraphicsScene *scene1;
 
     Jugador * estudiante;
     AmigoD  * amigo;
@@ -28,6 +29,7 @@ public:
     Asignaturas * english;
     Asignaturas * lecto;
     Asignaturas * mat;
+    Puntaje * nota;
 
     /*
     Score * score;

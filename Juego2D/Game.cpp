@@ -9,7 +9,7 @@
 Game::Game(QWidget *parent)
 {
 
-
+/*
     //***********CREACIÓN ESCENA NIVEL 2****************
     scene = new QGraphicsScene();
     scene->setSceneRect(0,0,800,600);   //En el origen; redefinimos alto y ancho
@@ -20,6 +20,9 @@ Game::Game(QWidget *parent)
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize(800,600);
     scene->addText("Nivel 2")->setFont(QFont("Trajan Pro",20));
+
+    nota = new Puntaje();
+    scene->addItem(nota);
     //***********CREACIÓN JUGADOR*********************
     estudiante = new Jugador();         //Como heredó todo de RectItem podemos usar esos métodos
     estudiante->setRect(0,500,50,80);   //Ubicado en el origen. Tamaño 50X80
@@ -57,9 +60,9 @@ Game::Game(QWidget *parent)
     timer->start(3000);
     //***************************
 show();
+*/
 
 
-    /*
     //***********CREACIÓN ESCENA NIVEL 1****************
     scene1 = new QGraphicsScene();
     scene1->setSceneRect(0,0,800,600);   //En el origen; redefinimos alto y ancho
@@ -103,5 +106,5 @@ show();
     //***************************
 
     show();
-*/
+
 }
