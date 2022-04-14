@@ -4,15 +4,19 @@
 #include<Asignaturas.h>
 #include<AmigoD.h>
 #include<QTimer>
+#include<QMediaPlayer>
 
 
 Game::Game(QWidget *parent)
 {
-
+    //Musica
+    musica = new QMediaPlayer();
+    musica->setMedia(QUrl("qrc:/s/Fondo.mp3"));
+    musica->play();
     //***********CREACIÓN ESCENA NIVEL 2****************
     scene = new QGraphicsScene();
     scene->setSceneRect(0,0,800,600);   //En el origen; redefinimos alto y ancho
-    //music = new QMediaPlayer();
+
     setScene(scene);    //Para poder visualizar la escena
     //***********FIJAR LA ESCENA HORIZONTAL Y VERTICALMENTE****************
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
