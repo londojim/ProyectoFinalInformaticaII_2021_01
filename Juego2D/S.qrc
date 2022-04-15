@@ -10,7 +10,6 @@
         <file>TocaPacman.mp3</file>
     </qresource>
     <qresource prefix="/imagenes">
-        <file>biblioteca.png</file>
         <file>bloqueING.png</file>
         <file>agenda.png</file>
         <file>AmigoD.png</file>
@@ -18,5 +17,7 @@
         <file>estudianteH.png</file>
         <file>estudianteM.png</file>
         <file>drogas.png</file>
+        <file>profe.png</file>
+        <file>biblioteca.png</file>
     </qresource>
 </RCC>

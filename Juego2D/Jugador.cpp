@@ -24,12 +24,12 @@ void Jugador::keyPressEvent(QKeyEvent *e)
         }
     }
     else if (e->key() == Qt::Key_Up){
-        //if(pos().y()){
+        if(pos().y()+pixmap().height()>115){
             setPos(x(),y()-10);
-        //}
+        }
     }
     else if (e->key() == Qt::Key_Down){
-        if(pos().y()){
+        if(pos().y()+pixmap().height()+10 <scene()->height()){
             setPos(x(),y()+10);
             }
         }

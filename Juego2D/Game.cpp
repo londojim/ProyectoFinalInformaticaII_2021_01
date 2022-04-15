@@ -5,7 +5,9 @@
 #include<AmigoD.h>
 #include<QTimer>
 #include<QMediaPlayer>
-
+#include<QBrush>
+#include<QImage>
+#include<QFont>
 
 Game::Game(QWidget *parent)
 {
@@ -16,7 +18,7 @@ Game::Game(QWidget *parent)
     //***********CREACIÓN ESCENA NIVEL 2****************
     scene = new QGraphicsScene();
     scene->setSceneRect(0,0,800,600);   //En el origen; redefinimos alto y ancho
-
+    setBackgroundBrush(QBrush(QImage(":/imagenes/biblioteca.png")));
     setScene(scene);    //Para poder visualizar la escena
     //***********FIJAR LA ESCENA HORIZONTAL Y VERTICALMENTE****************
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -27,7 +29,7 @@ Game::Game(QWidget *parent)
     scene->addItem(nota);
     //***********CREACIÓN JUGADOR*********************
     estudiante = new Jugador();
-    estudiante->setPos(0,500);
+    estudiante->setPos(150,500);
     estudiante->setPixmap(QPixmap(":/imagenes/estudianteM.png"));
 
     //Movimiento del jugador
@@ -42,22 +44,18 @@ Game::Game(QWidget *parent)
     cama = new Distractor();
     cama->setPos(350,300);
     scene->addItem(cama);
-    scene->addText("Procastinación")->setPos(350,280);
     //***********CREACIÓN ASIGNATURAS***************
     mat = new Asignaturas();
     mat->setPos(85,180);
     scene->addItem(mat);
-    scene->addText("Matemáticas")->setPos(85,150);
     //***************************
     english = new Asignaturas();
     english->setPos(350,100);
     scene->addItem(english);
-    scene->addText("Inglés")->setPos(360,75);
     //***************************
     informatica = new Asignaturas();
     informatica->setPos(600,50);
     scene->addItem(informatica);
-    scene->addText("Informática")->setPos(600,25);
     //***********DISPAROS DE AMIGO****************
     QTimer *timer = new QTimer();
     QObject::connect(timer, SIGNAL(timeout()),amigo, SLOT(Disparar()));
@@ -101,17 +99,14 @@ show();
     consola = new Distractor();
     consola->setPos(360,175);
     scene1->addItem(consola);
-    scene1->addText("Xbox")->setPos(375,150);
     //***********CREACIÓN ASIGNATURAS***************
     lecto = new Asignaturas();
     lecto->setPos(200,300);
     scene1->addItem(lecto);
-    scene1->addText("Lectoescritura")->setPos(200,270);
     //***************************
     english = new Asignaturas();
     english->setPos(550,220);
     scene1->addItem(english);
-    scene1->addText("Inglés")->setPos(565,200);
     //***********DISPAROS DE AMIGO****************
     //QTimer *timer = new QTimer();
     QObject::connect(timer, SIGNAL(timeout()),amigo, SLOT(Disparar()));
