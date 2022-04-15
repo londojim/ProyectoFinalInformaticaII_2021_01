@@ -7,7 +7,7 @@ AmigoD::AmigoD(QGraphicsItem *parent):QObject(),QGraphicsPixmapItem(parent)
 {
     setPixmap(QPixmap("qrc:/i/drogas.png"));
     SDroga = new QMediaPlayer();
-    setPixmap(QPixmap(":/imagenes/AmigoD.png"));
+    setPixmap(QPixmap(":/imagenes/Amigo.png"));
     }
 
 void AmigoD::Disparar()

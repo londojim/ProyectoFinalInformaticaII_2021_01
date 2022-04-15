@@ -12,6 +12,7 @@ CONFIG += c++11
 SOURCES += \
     AmigoD.cpp \
     Asignaturas.cpp \
+    Boton.cpp \
     Distractor.cpp \
     Drogas.cpp \
     Game.cpp \
@@ -23,6 +24,7 @@ SOURCES += \
 HEADERS += \
     AmigoD.h \
     Asignaturas.h \
+    Boton.h \
     Distractor.h \
     Drogas.h \
     Game.h \

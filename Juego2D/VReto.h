@@ -25,7 +25,7 @@ private:
     QGraphicsScene *ui;
     VReto *vMatematicas= new VReto; //Ventana emergente para la asignatura Matemáticas
     VReto *vInformatica= new VReto;
-   // VReto *vIngles= new VReto;
+    VReto *vIngles= new VReto;
 
     int num;
     int contador;

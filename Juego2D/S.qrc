@@ -8,16 +8,18 @@
         <file>subirNivel.mp3</file>
         <file>TocaDroga.mp3</file>
         <file>TocaPacman.mp3</file>
+        <file>menu.mp3</file>
     </qresource>
     <qresource prefix="/imagenes">
-        <file>bloqueING.png</file>
         <file>agenda.png</file>
-        <file>AmigoD.png</file>
         <file>Consola.png</file>
         <file>estudianteH.png</file>
         <file>estudianteM.png</file>
         <file>drogas.png</file>
         <file>profe.png</file>
         <file>biblioteca.png</file>
+        <file>bloqueING.png</file>
+        <file>Amigo.png</file>
+        <file>fuente.jpg</file>
     </qresource>
 </RCC>
