@@ -16,6 +16,8 @@ public:
     void keyPressEvent(QKeyEvent *e);   //Para leer pulsaciones del teclado
 private:
     QMediaPlayer *STocaPacman;
+    QMediaPlayer *SAsesoria;
+
 
 
 };

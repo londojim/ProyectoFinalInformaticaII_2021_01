@@ -47,6 +47,16 @@ void Jugador::keyPressEvent(QKeyEvent *e)
 
             return ;
         }
+        if(typeid(  *(colliding_items[i])) == typeid(Profesor) ){//typeid retorna tipo de clase/objeto que estamos mirando
+            SAsesoria= new QMediaPlayer();
+            SAsesoria->setMedia(QUrl("qrc:/s/pass.mp3"));
+            SAsesoria->play();
+            game->nota->aumentar();
+            game->estudiante->setPos(10,500); //Reubicamos el jugador para evitar que detecte otra colision inmediatamente
+
+            return ;
+        }
+
     }
 
 }

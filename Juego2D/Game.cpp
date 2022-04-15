@@ -186,7 +186,7 @@ void Game::start()
 
         //CREACIÓN PROFESOR
         Augusto = new Profesor();
-        Augusto->setPos(10,85);
+        Augusto->setPos(30,85);
         Augusto->setPixmap(QPixmap(":/imagenes/profe.png"));
         scene->addItem(Augusto);
 
@@ -197,7 +197,7 @@ void Game::start()
         scene->addItem(amigo);
 
         QObject::connect(timer, SIGNAL(timeout()),amigo, SLOT(Disparar()));
-        timer->start(1500);
+        timer->start(1850);
 
         amigo1 = new AmigoD();
         amigo1->setPos(675,200);

@@ -3,12 +3,12 @@
         <file>fail.mp3</file>
         <file>Fondo.mp3</file>
         <file>lanzamientoDroga.mp3</file>
-        <file>pass.mp3</file>
         <file>Reto.mp3</file>
         <file>subirNivel.mp3</file>
         <file>TocaDroga.mp3</file>
         <file>TocaPacman.mp3</file>
         <file>menu.mp3</file>
+        <file>pass.mp3</file>
     </qresource>
     <qresource prefix="/imagenes">
         <file>agenda.png</file>
