@@ -45,16 +45,16 @@ void Game::menu()
     scene->addItem(titleText);
 
     // crear boton play
-    Boton * playButton = new Boton(QString("Play"));
-    int bxPos = this->width()/2 -playButton->boundingRect().width()/2;
+    Boton * playButton = new Boton(QString("Jugar"));
+    int bxPos = 70;//this->width()/2 -playButton->boundingRect().width()/2
     int byPos = 275;
     playButton->setPos(bxPos,byPos);
     connect(playButton,SIGNAL(click()),this,SLOT(start()));
     scene->addItem(playButton);
 
     // crear boton salir
-    Boton * quitButton = new Boton(QString("Exit"));
-    int qxPos = this->width()/2 -quitButton->boundingRect().width()/2;
+    Boton * quitButton = new Boton(QString("Salir"));
+    int qxPos = 65;//this->width()/2 -quitButton->boundingRect().width()/2;
     int qyPos = 350;
     quitButton->setPos(qxPos,qyPos);
     connect(playButton,SIGNAL(click()),this,SLOT(close()));
