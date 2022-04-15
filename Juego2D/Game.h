@@ -11,6 +11,7 @@
 #include<Puntaje.h>
 #include<vreto.h>
 #include<QMediaplayer>
+#include<profesor.h>
 
 // Clase que contendrá la escena donde pondremos los objetos que van a interactuar
 class Game: public QGraphicsView{ //Hereda así para poder crear el view donde pondremos todo en escena
@@ -24,6 +25,7 @@ public:
 
     Jugador * estudiante;
     AmigoD  * amigo;
+    AmigoD  * amigo1;
     Distractor  * consola;
     Distractor  * consola2;
     Asignaturas * informatica;
@@ -31,6 +33,7 @@ public:
     Asignaturas * lecto;
     Asignaturas * mat;
     Puntaje * nota;
+    Profesor *Augusto;
 
     //Pruebas para las ventanas emergentes
     int numIntentos;

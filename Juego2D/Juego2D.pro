@@ -19,6 +19,7 @@ SOURCES += \
     Jugador.cpp \
     Puntaje.cpp \
     main.cpp \
+    profesor.cpp \
     vreto.cpp
 
 HEADERS += \
@@ -30,6 +31,7 @@ HEADERS += \
     Game.h \
     Jugador.h \
     Puntaje.h \
+    profesor.h \
     vreto.h
 
 # Default rules for deployment.

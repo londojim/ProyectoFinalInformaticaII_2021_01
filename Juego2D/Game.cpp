@@ -9,6 +9,7 @@
 #include<QImage>
 #include<QFont>
 #include<Boton.h>
+#include<profesor.h>
 
 Game::Game(QWidget *parent)
 {
@@ -21,6 +22,8 @@ Game::Game(QWidget *parent)
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize(800,600);
+
+    numNivel=3;     //Añadir validación nota...
 }
 
 
@@ -66,9 +69,10 @@ void Game::start()
     musica->play();
 
     QTimer *timer = new QTimer();
+    QTimer *timer1 = new QTimer();
     nota = new Puntaje();
 
-    if(5<=60){      //CORREGIR, LA COMPARACIÓN DEBE SER CON LA NOTA
+    if(numNivel==1){
 
         //PINTANDO LA ESCENA NIVEL 1
         scene->clear();
@@ -114,7 +118,7 @@ void Game::start()
         show();
 
     }
-    if(5>=60){
+    if(numNivel==2){
         //PINTANDO LA ESCENA NIVEL 2/
         scene->clear();
         setBackgroundBrush(QBrush(QImage(":/imagenes/biblioteca.png")));
@@ -162,6 +166,66 @@ void Game::start()
             vIngles->show();
         }*/
         show();
+    }
+    if(numNivel==3){
+        //PINTANDO LA ESCENA NIVEL 3/
+        scene->clear();
+        setBackgroundBrush(QBrush(QImage(":/imagenes/barrientos.jpg")));
+        setScene(scene);    //Para poder visualizar la escena
+        scene->addText("Nivel 2")->setPos(400,0);//->setFont(QFont("Trajan Pro",20));
+        scene->addItem(nota);
+
+        //CREACIÓN JUGADOR
+        estudiante = new Jugador();
+        estudiante->setPos(600,500);
+        estudiante->setPixmap(QPixmap(":/imagenes/estudianteM.png"));
+       //Movimiento del jugador
+        estudiante->setFlag(QGraphicsItem::ItemIsFocusable);
+        estudiante->setFocus();
+        scene->addItem(estudiante);
+
+        //CREACIÓN PROFESOR
+        Augusto = new Profesor();
+        Augusto->setPos(10,85);
+        Augusto->setPixmap(QPixmap(":/imagenes/profe.png"));
+        scene->addItem(Augusto);
+
+
+        //CREACIÓN DISTRACTORES
+        amigo = new AmigoD();
+        amigo->setPos(675,400);
+        scene->addItem(amigo);
+
+        QObject::connect(timer, SIGNAL(timeout()),amigo, SLOT(Disparar()));
+        timer->start(1500);
+
+        amigo1 = new AmigoD();
+        amigo1->setPos(675,200);
+        scene->addItem(amigo1);
+
+        QObject::connect(timer1, SIGNAL(timeout()),amigo1, SLOT(Disparar()));
+        timer1->start(3000);
+
+        consola = new Distractor();
+        consola->setPos(350,300);
+        scene->addItem(consola);
+
+        //***********CREACIÓN ASIGNATURAS***************
+        mat = new Asignaturas();
+        mat->setPos(350,480);
+        scene->addItem(mat);
+
+        english = new Asignaturas();
+        english->setPos(350,100);
+        scene->addItem(english);
+
+        informatica = new Asignaturas();
+        informatica->setPos(600,50);
+        scene->addItem(informatica);
+
+        lecto = new Asignaturas();
+        lecto->setPos(150,300);
+        scene->addItem(lecto);
     }
 
 }
