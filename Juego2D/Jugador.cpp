@@ -4,7 +4,7 @@
 #include<Game.h>
 extern Game *game;  //Llamamos una vble externa para interactuar con ella
 extern Jugador *estudiante;
-Jugador::Jugador(QGraphicsItem *parent)
+Jugador::Jugador(QGraphicsItem *parent):QObject(),QGraphicsPixmapItem(parent)
 {
 
 }
@@ -19,7 +19,7 @@ void Jugador::keyPressEvent(QKeyEvent *e)
         }
     }
     else if (e->key() == Qt::Key_Right){
-        if(pos().x()+rect().width() < scene()->width()){  //pos+tamaño rectangulo (jugador) < ancho escena: lo mueve
+        if(pos().x()+pixmap().width() < scene()->width()){  //pos+tamaño rectangulo (jugador) < ancho escena: lo mueve
             setPos(x()+10,y());
         }
     }
@@ -29,7 +29,7 @@ void Jugador::keyPressEvent(QKeyEvent *e)
         //}
     }
     else if (e->key() == Qt::Key_Down){
-        if(pos().y()<0){
+        if(pos().y()){
             setPos(x(),y()+10);
             }
         }

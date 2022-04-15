@@ -1,11 +1,11 @@
 #ifndef ASIGNATURAS_H
 #define ASIGNATURAS_H
 
-#include <QGraphicsRectItem>    //Rectangulo que va en escena
+#include<QGraphicsPixmapItem>
 #include<QGraphicsItem>
 #include <QObject>
 
-class Asignaturas: public QObject, public QGraphicsRectItem{
+class Asignaturas: public QObject, public QGraphicsPixmapItem{
     Q_OBJECT
 public:
     Asignaturas(QGraphicsItem *parent = 0);

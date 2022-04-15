@@ -3,11 +3,11 @@
 #include<Drogas.h>
 #include<QDebug>
 
-AmigoD::AmigoD(QGraphicsItem *parent)
+AmigoD::AmigoD(QGraphicsItem *parent):QObject(),QGraphicsPixmapItem(parent)
 {
-    setRect(0,0,85,85);
-        SDroga = new QMediaPlayer();
-        SDroga->setMedia(QUrl("qrc:/s/lanzamientoDroga.mp3"));
+    setPixmap(QPixmap("qrc:/i/drogas.png"));
+    SDroga = new QMediaPlayer();
+    setPixmap(QPixmap(":/imagenes/AmigoD.png"));
     }
 
 void AmigoD::Disparar()
@@ -15,7 +15,7 @@ void AmigoD::Disparar()
     Drogas *droga = new Drogas();
     SDroga->play();
 
-    droga->setPos(x(),y());  //Del centro de alto
+    droga->setPos(x()+15,y()+40);  //Del centro de alto
     scene()->addItem(droga);
     //qDebug()<<"Se esta disparando";
 }

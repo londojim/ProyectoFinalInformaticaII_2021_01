@@ -1,12 +1,12 @@
 #ifndef DISTRACTOR_H
 #define DISTRACTOR_H
 
-#include<QGraphicsRectItem>         //El distractor es un rectangulo. Luego se pinta con el sprite
+#include<QGraphicsPixmapItem>
 #include<QGraphicsItem>             //Necesito mostrarlo en escena
 #include<QObject>                   //Para poder obtener y modificar parametros del rectangulo
 #include <math.h>
 
-class Distractor: public QObject, public QGraphicsRectItem{
+class Distractor: public QObject, public QGraphicsPixmapItem{
     Q_OBJECT                        // Macro para decir que la clase jugador es hijo de QObject y tiene todos los parámetros de QObject
 
 public:

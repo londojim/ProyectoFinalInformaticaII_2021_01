@@ -2,9 +2,9 @@
 #include<QGraphicsScene>
 #include<QTimer>
 
-Asignaturas::Asignaturas(QGraphicsItem *parent)
+Asignaturas::Asignaturas(QGraphicsItem *parent):QObject(),QGraphicsPixmapItem(parent)
 {
-    setRect(0,0,70,70);
+    setPixmap(QPixmap(":/imagenes/agenda.png"));
     BArriba=1;
     QTimer *timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()),this,SLOT(movAsignatura()));   //this por estar dentro de la misma clase
