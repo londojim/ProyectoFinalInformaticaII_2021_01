@@ -29,7 +29,7 @@ void Jugador::keyPressEvent(QKeyEvent *e)
         //}
     }
     else if (e->key() == Qt::Key_Down){
-        if(pos().y()){
+        if(pos().y()<0){
             setPos(x(),y()+10);
             }
         }
@@ -39,6 +39,9 @@ void Jugador::keyPressEvent(QKeyEvent *e)
     for(int i=0, n=colliding_items.size(); i<n; i++ ){ //Mientras i<n: aumente i
         //Si colisiona con estudiante: la calificación baja
         if(typeid(  *(colliding_items[i])) == typeid(Distractor) ){//typeid retorna tipo de clase/objeto que estamos mirando
+            STocaPacman= new QMediaPlayer();
+            STocaPacman->setMedia(QUrl("qrc:/s/TocaPacman.mp3"));
+            STocaPacman->play();
             game->nota->disminuir();
             game->estudiante->setPos(10,y()); //Reubicamos el jugador para evitar que detecte otra colision inmediatamente
 

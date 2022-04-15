@@ -9,7 +9,7 @@
 
 Game::Game(QWidget *parent)
 {
-    //Musica
+    //Musica de fondo
     musica = new QMediaPlayer();
     musica->setMedia(QUrl("qrc:/s/Fondo.mp3"));
     musica->play();
@@ -27,7 +27,7 @@ Game::Game(QWidget *parent)
     scene->addItem(nota);
     //***********CREACIÓN JUGADOR*********************
     estudiante = new Jugador();         //Como heredó todo de RectItem podemos usar esos métodos
-    estudiante->setRect(0,500,50,80);   //Ubicado en el origen. Tamaño 50X80
+    estudiante->setRect(0,500,65,65);   //Ubicado en el origen. Tamaño 50X80
     //Movimiento del jugador
     estudiante->setFlag(QGraphicsItem::ItemIsFocusable);
     estudiante->setFocus();
