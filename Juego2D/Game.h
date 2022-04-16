@@ -19,6 +19,7 @@ class Game: public QGraphicsView{ //Hereda así para poder crear el view donde p
 public:
     Game(QWidget *parent = 0); //Constructor así para evitar errores por tener un constructor vacío
     void menu();
+    void GameOver();
 
    QGraphicsScene *scene;   //Para la escena que tendremos
    QGraphicsScene *scene1;

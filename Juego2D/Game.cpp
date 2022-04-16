@@ -10,6 +10,7 @@
 #include<QFont>
 #include<Boton.h>
 #include<profesor.h>
+#include<Drogas.h>
 
 Game::Game(QWidget *parent)
 {
@@ -46,7 +47,7 @@ void Game::menu()
 
     // crear boton play
     Boton * playButton = new Boton(QString("Jugar"));
-    int bxPos = 70;//this->width()/2 -playButton->boundingRect().width()/2
+    int bxPos = 65;//this->width()/2 -playButton->boundingRect().width()/2
     int byPos = 275;
     playButton->setPos(bxPos,byPos);
     connect(playButton,SIGNAL(click()),this,SLOT(start()));
@@ -114,6 +115,7 @@ void Game::start()
         english = new Asignaturas();
         english->setPos(550,220);
         scene->addItem(english);
+
 
         show();
 
@@ -227,5 +229,31 @@ void Game::start()
         lecto->setPos(150,300);
         scene->addItem(lecto);
     }
+
+}
+
+void Game::GameOver()
+{
+    scene->clear();
+    setBackgroundBrush(QBrush(QImage(":/imagenes/GameOver.png")));
+
+    musica->setMedia(QUrl("qrc:/s/menu.mp3"));
+    musica->play();
+
+    // crear boton re-intento
+    Boton * playButton = new Boton(QString("Jugar"));
+    int bxPos = 65;//this->width()/2 -playButton->boundingRect().width()/2
+    int byPos = 275;
+    playButton->setPos(bxPos,byPos);
+    connect(playButton,SIGNAL(click()),this,SLOT(start()));
+    scene->addItem(playButton);
+
+    // crear boton salir
+    Boton * quitButton = new Boton(QString("Salir"));
+    int qxPos = 65;//this->width()/2 -quitButton->boundingRect().width()/2;
+    int qyPos = 350;
+    quitButton->setPos(qxPos,qyPos);
+    connect(playButton,SIGNAL(click()),this,SLOT(close()));
+    scene->addItem(quitButton);
 
 }

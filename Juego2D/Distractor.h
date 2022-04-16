@@ -11,6 +11,7 @@ class Distractor: public QObject, public QGraphicsPixmapItem{
 
 public:
     Distractor(QGraphicsItem *parent = 0); //EL constructor por defecto asigna algo y evitamos posibles errores
+    double i;
 
 public slots:
     void movDistractores();

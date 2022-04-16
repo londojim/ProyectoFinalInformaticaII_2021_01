@@ -4,6 +4,13 @@
 #include<QtDebug>
 #include<QList>
 #include<Jugador.h>
+#include<Game.h>
+
+#include<QMediaPlayer>
+#include<QBrush>
+#include<QImage>
+
+extern Game *game;
 
 Drogas::Drogas()
 {
@@ -13,6 +20,7 @@ Drogas::Drogas()
     QTimer *timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()),this,SLOT(movDroga()));  //La funcion que conectamos se va a ejecutar en cada flaco de reloj del sistema
     timer->start(80);  //En milisegundos
+
 }
 
 void Drogas::movDroga()
@@ -27,16 +35,20 @@ void Drogas::movDroga()
             STocaDroga= new QMediaPlayer();
             STocaDroga->setMedia(QUrl("qrc:/s/TocaDroga.mp3"));
             STocaDroga->play();
+
+
             delete colliding_items[i];
             delete this;
-            return;
+            game->GameOver();
+
+            return ;
             //NOTA: PENDIENTE QUE TAMBIÉN BORRE LA ESCENA Y LE PONGA UN GAMEOVER
         }
     }
 
     setPos(x()-10,y());             //Por la ubicación del amigo, la droga irá a la  izquierda
     if(pos().x()+pixmap().width()<0)  //Eliminar la droga cuando sale de la escena
-        {
+    {
         scene()->removeItem(this);
         delete this;
     }

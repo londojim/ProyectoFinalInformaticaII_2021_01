@@ -22,5 +22,6 @@
         <file>Amigo.png</file>
         <file>fuente.jpg</file>
         <file>barrientos.jpg</file>
+        <file>GameOver.png</file>
     </qresource>
 </RCC>

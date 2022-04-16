@@ -17,6 +17,7 @@ void AmigoD::Disparar()
 
     droga->setPos(x()+15,y()+40);  //Del centro de alto
     scene()->addItem(droga);
+
     //qDebug()<<"Se esta disparando";
 }
 
