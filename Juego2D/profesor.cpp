@@ -3,9 +3,8 @@
 
 Profesor::Profesor(QGraphicsItem *parent):QObject(),QGraphicsPixmapItem(parent)
 {
-    setPixmap(QPixmap("qrc:/i/profe.png"));
-    SDroga = new QMediaPlayer();
-    setPixmap(QPixmap(":/imagenes/Amigo.png"));
+    setPixmap(QPixmap("qrc:/imagenes/profe.png"));
+
     }
 
 //void movProfesor(){}

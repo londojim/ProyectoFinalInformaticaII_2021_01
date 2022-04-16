@@ -16,7 +16,6 @@ public:
 public slots:
     //void movProfesor();
 private:
-    QMediaPlayer *SDroga;
 };
 
 #endif // PROFESOR_H

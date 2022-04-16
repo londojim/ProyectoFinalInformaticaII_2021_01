@@ -20,6 +20,10 @@ public:
     Game(QWidget *parent = 0); //Constructor así para evitar errores por tener un constructor vacío
     void menu();
     void GameOver();
+    void nivel1();
+    void nivel2();
+    void nivel3();
+    void felicidades();
 
    QGraphicsScene *scene;   //Para la escena que tendremos
    QGraphicsScene *scene1;
@@ -35,6 +39,7 @@ public:
     Asignaturas * mat;
     Puntaje * nota;
     Profesor *Augusto;
+    int llamado=0;
 
     //Pruebas para las ventanas emergentes
     int numIntentos;
@@ -44,6 +49,7 @@ public:
 
 public slots:
     void start();
+    int Nivel();
 
 };
 #endif // GAME_H

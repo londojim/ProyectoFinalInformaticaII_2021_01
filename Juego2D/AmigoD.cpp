@@ -5,8 +5,9 @@
 
 AmigoD::AmigoD(QGraphicsItem *parent):QObject(),QGraphicsPixmapItem(parent)
 {
-    setPixmap(QPixmap("qrc:/i/drogas.png"));
     SDroga = new QMediaPlayer();
+    SDroga->setMedia(QUrl("qrc:/s/lanzamientoDroga.mp3"));
+
     setPixmap(QPixmap(":/imagenes/Amigo.png"));
     }
 

@@ -27,7 +27,7 @@ void Distractor::movDistractores()
     double W=-1;                //velocidad angular
     double Desfase=-3.01416;
     double rad=0.01745329252;
-            i+rad;//ANGULO DE GIRO EN RAD
+            int i=i+rad;//ANGULO DE GIRO EN RAD
 
     //setPos(x()+r*cos(i*W+Desfase),y()+r*sin(i*W));
 
