@@ -49,7 +49,7 @@ void Jugador::keyPressEvent(QKeyEvent *e)
             STocaPacman= new QMediaPlayer();
             STocaPacman->setMedia(QUrl("qrc:/s/TocaPacman.mp3"));
             STocaPacman->play();
-            game->nota->disminuir();
+            game->nota->aumentar();
             game->estudiante->setPos(10,y()); //Reubicamos el jugador para evitar que detecte otra colision inmediatamente
 
             return ;

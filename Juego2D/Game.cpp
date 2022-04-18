@@ -19,6 +19,9 @@
 
 QTimer *timerNivel = new QTimer();
 QTimer *timerReto = new QTimer();
+QTimer *timer = new QTimer();
+QTimer *timer1 = new QTimer();
+
 
 //Creamos un objeto tipo VReto, que es el que contendrá la escena del reto
 VReto *reto;
@@ -36,7 +39,7 @@ Game::Game(QWidget *parent)
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize(800,600);
 
-    numNivel=1;     //Añadir validación nota...
+    //numNivel=1;     //Añadir validación nota...
 }
 
 
@@ -47,6 +50,7 @@ void Game::menu()
 
     musica->setMedia(QUrl("qrc:/s/menu.mp3"));
     musica->play();
+    numNivel=1;
 
     QGraphicsTextItem * titleText = new QGraphicsTextItem(QString("Salvando el semestre"));
     QFont titleFont("comic sans",50);
@@ -81,7 +85,16 @@ void Game::start()
     musica->setMedia(QUrl("qrc:/s/Fondo.mp3"));
     musica->play();
     nota = new Puntaje();
-    nivel1();
+    if(numNivel==1){
+        nivel1();
+    }else if(numNivel==2){
+        nivel2();
+
+    }
+    else if(numNivel==3){
+        nivel3();
+
+    }
 
 }
 int Game::Nivel()
@@ -92,10 +105,11 @@ int Game::Nivel()
     switch (numNivel){
     case 1:
         if(nota->getPuntaje()>=60){
-            timerNivel->disconnect();
-            timerReto->disconnect();
+            //timerNivel->disconnect();
+            //timerReto->disconnect();
             numNivel=2;
-            //nivel2();
+            start();
+
         }
         else if(nota->getPuntaje()<0){
             timerNivel->disconnect();
@@ -108,7 +122,7 @@ int Game::Nivel()
         if(nota->getPuntaje()>=60){
             timerNivel->disconnect();
             numNivel=3;
-            nivel3();
+            start();
         }
         else if(nota->getPuntaje()<0){
             timerNivel->disconnect();
@@ -159,7 +173,6 @@ void Game::GameOver()
 }
 
 void Game::nivel1(){
-    QTimer *timer = new QTimer();
     //PINTANDO LA ESCENA NIVEL 1
     scene->clear();
     setBackgroundBrush(QBrush(QImage(":/imagenes/bloqueING.png")));
@@ -209,7 +222,7 @@ void Game::nivel1(){
     show();
 }
 void Game::nivel2(){
-    QTimer *timer = new QTimer();
+    //QTimer *timer = new QTimer();
     //PINTANDO LA ESCENA NIVEL 2/
     scene->clear();
     setBackgroundBrush(QBrush(QImage(":/imagenes/biblioteca.png")));
@@ -254,16 +267,11 @@ void Game::nivel2(){
     QObject::connect(timerNivel, SIGNAL(timeout()),this, SLOT(Nivel()));
     timerNivel->start(1000);
 
-    /*if(estudiante->collidesWithItem(mat)) {
-        musica->stop();
-        VReto *vIngles = new VReto;
-        vIngles->show();
-    }*/
     show();
 }
 void Game::nivel3(){
-    QTimer *timer = new QTimer();
-    QTimer *timer1 = new QTimer();
+    //QTimer *timer = new QTimer();
+    //QTimer *timer1 = new QTimer();
     //PINTANDO LA ESCENA NIVEL 3/
     scene->clear();
     setBackgroundBrush(QBrush(QImage(":/imagenes/barrientos.jpg")));
@@ -328,10 +336,34 @@ void Game::nivel3(){
     show();
 
 }
-void Game::felicidades(){}
+void Game::felicidades(){
+    scene->clear();
+
+    setBackgroundBrush(QBrush(QImage(":/imagenes/fuente.jpg")));
+    musica->setMedia(QUrl("qrc:/s/menu.mp3"));
+    musica->play();
+    numNivel=1;
+
+    QGraphicsTextItem * titleText = new QGraphicsTextItem(QString("¡PASASTE EL SEMESTRE!"));
+    QFont titleFont("comic sans",50);
+    titleText->setFont(titleFont);
+    int txPos = this->width()/2 - titleText->boundingRect().width()/2;
+    int tyPos = 150;
+    titleText->setPos(txPos,tyPos);
+    scene->addItem(titleText);
+
+    // crear boton play
+    Boton * playButton = new Boton(QString("Jugar de nuevo"));
+    int bxPos = 65;//this->width()/2 -playButton->boundingRect().width()/2
+    int byPos = 275;
+    playButton->setPos(bxPos,byPos);
+    connect(playButton,SIGNAL(click()),this,SLOT(start()));
+    scene->addItem(playButton);
+}
 
 int Game::Reto(){
-/*
+
+
     if(numNivel==1){
         if(estudiante->collidesWithItem(lecto)){
             estudiante->setPos(15,450); //Reubicamos el jugador para evitar que detecte otra colision inmediatamente
@@ -351,7 +383,7 @@ int Game::Reto(){
         }
     }
 
-    if(numNivel==2){
+    else if(numNivel==2){
         if(estudiante->collidesWithItem(english)){
             estudiante->setPos(15,450); //Reubicamos el jugador para evitar que detecte otra colision inmediatamente
 
@@ -379,7 +411,7 @@ int Game::Reto(){
             reto->show();
         }
     }
-    if(numNivel==3){
+    else if(numNivel==3){
         if(estudiante->collidesWithItem(lecto)){
             estudiante->setPos(15,450); //Reubicamos el jugador para evitar que detecte otra colision inmediatamente
             reto= new VReto;
@@ -408,12 +440,10 @@ int Game::Reto(){
             reto->setNum();
             reto->retoInfo();
             reto->show();
+            //reto->close();
         }
 
     }
     //qDebug()<<"lleva: "<<numIntentos<< "intentos";
 
-
-    //reto->close();
-*/
 }

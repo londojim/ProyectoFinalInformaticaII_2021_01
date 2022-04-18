@@ -35,8 +35,8 @@ void Drogas::movDroga()
             STocaDroga= new QMediaPlayer();
             STocaDroga->setMedia(QUrl("qrc:/s/TocaDroga.mp3"));
             STocaDroga->play();
-            delete colliding_items[i];
-            delete this;
+            //delete colliding_items[i];
+            //delete this;
             game->GameOver();
             return ;
         }
