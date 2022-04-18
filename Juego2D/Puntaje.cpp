@@ -10,7 +10,7 @@ Puntaje::Puntaje(QGraphicsItem *parent)
     setPlainText(QString("Calificación: ")+QString::number(nota));
     setDefaultTextColor(Qt::blue);
 
-    setFont(QFont("times",16));
+    setFont(QFont("times",18));
 }
 void Puntaje::aumentar()
 {

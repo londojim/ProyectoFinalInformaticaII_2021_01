@@ -13,6 +13,9 @@
 #include<QMediaplayer>
 #include<profesor.h>
 
+#include <QMainWindow>
+
+
 // Clase que contendrá la escena donde pondremos los objetos que van a interactuar
 class Game: public QGraphicsView{ //Hereda así para poder crear el view donde pondremos todo en escena
     Q_OBJECT
@@ -26,8 +29,6 @@ public:
     void felicidades();
 
    QGraphicsScene *scene;   //Para la escena que tendremos
-   QGraphicsScene *scene1;
-
     Jugador * estudiante;
     AmigoD  * amigo;
     AmigoD  * amigo1;
@@ -39,6 +40,7 @@ public:
     Asignaturas * mat;
     Puntaje * nota;
     Profesor *Augusto;
+
     int llamado=0;
 
     //Pruebas para las ventanas emergentes
@@ -46,10 +48,12 @@ public:
     int numNivel;
     //Para la  musica
     QMediaPlayer *musica;
+    QMediaPlayer *m;
 
 public slots:
     void start();
     int Nivel();
+    int Reto();
 
 };
 #endif // GAME_H

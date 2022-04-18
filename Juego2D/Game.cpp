@@ -13,8 +13,15 @@
 #include<Drogas.h>
 #include<Puntaje.h>
 #include<QDebug>
+#include<vreto.h>
+
+//extern VReto *reto;
 
 QTimer *timerNivel = new QTimer();
+QTimer *timerReto = new QTimer();
+
+//Creamos un objeto tipo VReto, que es el que contendrá la escena del reto
+VReto *reto;
 
 Game::Game(QWidget *parent)
 {
@@ -22,6 +29,7 @@ Game::Game(QWidget *parent)
     scene->setSceneRect(0,0,800,600);
 
     musica = new QMediaPlayer();
+    m = new QMediaPlayer();
 
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -73,22 +81,25 @@ void Game::start()
     musica->setMedia(QUrl("qrc:/s/Fondo.mp3"));
     musica->play();
     nota = new Puntaje();
-    nivel3();
+    nivel1();
 
 }
 int Game::Nivel()
 {
 
-    //qDebug()<<"EL PUNTAJE VA EN";
-    //qDebug()<<nota->getPuntaje();
+    qDebug()<<"EL PUNTAJE VA EN";
+    qDebug()<<nota->getPuntaje();
     switch (numNivel){
     case 1:
         if(nota->getPuntaje()>=60){
             timerNivel->disconnect();
-            nivel2();
+            timerReto->disconnect();
+            numNivel=2;
+            //nivel2();
         }
         else if(nota->getPuntaje()<0){
             timerNivel->disconnect();
+            timerReto->disconnect();
             GameOver();
         }
         break;
@@ -96,6 +107,7 @@ int Game::Nivel()
     case 2:
         if(nota->getPuntaje()>=60){
             timerNivel->disconnect();
+            numNivel=3;
             nivel3();
         }
         else if(nota->getPuntaje()<0){
@@ -190,6 +202,9 @@ void Game::nivel1(){
     scene->addItem(english);
     QObject::connect(timerNivel, SIGNAL(timeout()),this, SLOT(Nivel()));
     timerNivel->start(1000);
+
+    QObject::connect(timerReto, SIGNAL(timeout()),this, SLOT(Reto()));
+    timerReto->start(1000);
 
     show();
 }
@@ -314,3 +329,91 @@ void Game::nivel3(){
 
 }
 void Game::felicidades(){}
+
+int Game::Reto(){
+/*
+    if(numNivel==1){
+        if(estudiante->collidesWithItem(lecto)){
+            estudiante->setPos(15,450); //Reubicamos el jugador para evitar que detecte otra colision inmediatamente
+            //lecto->setPos(810,610);
+            reto= new VReto;
+            reto->setNum();
+            reto->retoLecto();
+            reto->show();
+        }
+        else if(estudiante->collidesWithItem(english)){
+            estudiante->setPos(15,450); //Reubicamos el jugador para evitar que detecte otra colision inmediatamente
+            reto= new VReto;
+            reto->setNum();
+            reto->retoE();
+            reto->show();
+
+        }
+    }
+
+    if(numNivel==2){
+        if(estudiante->collidesWithItem(english)){
+            estudiante->setPos(15,450); //Reubicamos el jugador para evitar que detecte otra colision inmediatamente
+
+            //delete colliding_items[i];
+            //delete this;
+            reto= new VReto;
+            reto->setNum();
+            reto->retoE();
+            reto->show();
+
+        }
+        else if(estudiante->collidesWithItem(mat)){
+            estudiante->setPos(15,450); //Reubicamos el jugador para evitar que detecte otra colision inmediatamente
+            reto= new VReto;
+            reto->setNum();
+            reto->retoMat();
+            reto->show();
+
+        }
+        else if(estudiante->collidesWithItem(informatica)){
+            estudiante->setPos(15,450); //Reubicamos el jugador para evitar que detecte otra colision inmediatamente
+            reto= new VReto;
+            reto->setNum();
+            reto->retoInfo();
+            reto->show();
+        }
+    }
+    if(numNivel==3){
+        if(estudiante->collidesWithItem(lecto)){
+            estudiante->setPos(15,450); //Reubicamos el jugador para evitar que detecte otra colision inmediatamente
+            reto= new VReto;
+            reto->setNum();
+            reto->retoLecto();
+            reto->show();
+        }
+        if(estudiante->collidesWithItem(english)){
+            estudiante->setPos(15,450); //Reubicamos el jugador para evitar que detecte otra colision inmediatamente
+            reto= new VReto;
+            reto->setNum();
+            reto->retoE();
+            reto->show();
+
+        }
+        else if(estudiante->collidesWithItem(mat)){
+            estudiante->setPos(15,450); //Reubicamos el jugador para evitar que detecte otra colision inmediatamente
+            reto= new VReto;
+            reto->setNum();
+            reto->retoMat();
+            reto->show();
+        }
+        else if(estudiante->collidesWithItem(informatica)){
+            estudiante->setPos(15,450); //Reubicamos el jugador para evitar que detecte otra colision inmediatamente
+            reto= new VReto;
+            reto->setNum();
+            reto->retoInfo();
+            reto->show();
+        }
+
+    }
+    //qDebug()<<"lleva: "<<numIntentos<< "intentos";
+
+
+    //reto->close();
+*/
+}

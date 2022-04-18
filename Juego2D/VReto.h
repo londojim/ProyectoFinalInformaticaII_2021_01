@@ -6,6 +6,7 @@
 #include<QWidget>
 #include <Game.h>
 #include<QMainWindow>
+#include<string>
 
 namespace Ui {
 class VReto;
@@ -18,17 +19,17 @@ class VReto: public QGraphicsView
 public:
     explicit VReto(QWidget *parent = nullptr);
     ~VReto();
-
-    void setNum(int newNum);
-
-private:
     QGraphicsScene *ui;
-    VReto *vMatematicas= new VReto; //Ventana emergente para la asignatura Matemáticas
-    VReto *vInformatica= new VReto;
-    VReto *vIngles= new VReto;
+     //Indica que asignatura es
 
-    int num;
-    int contador;
+    void setNum();
+
+    void retoLecto();
+    void retoMat();
+    void retoE();
+    void retoInfo();
+
+   int notaA;
 };
 
 

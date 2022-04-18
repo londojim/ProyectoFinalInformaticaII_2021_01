@@ -4,6 +4,13 @@
 #include<Game.h>
 extern Game *game;  //Llamamos una vble externa para interactuar con ella
 extern Jugador *estudiante;
+/*
+extern Asignaturas *mat;
+extern Asignaturas *lecto;
+extern Asignaturas *english;
+extern Asignaturas *informatica;
+*/
+
 Jugador::Jugador(QGraphicsItem *parent):QObject(),QGraphicsPixmapItem(parent)
 {
 

@@ -23,5 +23,6 @@
         <file>fuente.jpg</file>
         <file>barrientos.jpg</file>
         <file>GameOver.png</file>
+        <file>reto.jpg</file>
     </qresource>
 </RCC>
