@@ -32,12 +32,15 @@ void Drogas::movDroga()
         //Si colisiona con estudiante: Reprueba inmediatamente.
 
         if(typeid(  *(colliding_items[i])) == typeid(Jugador) ){//typeid retorna tipo de clase/objeto que estamos mirando
-            STocaDroga= new QMediaPlayer();
+
+            /*STocaDroga= new QMediaPlayer();
             STocaDroga->setMedia(QUrl("qrc:/s/TocaDroga.mp3"));
             STocaDroga->play();
+            */
             //delete colliding_items[i];
             //delete this;
-            game->GameOver();
+            game->nota->setPuntaje();
+            //game->GameOver();
             return ;
         }
     }

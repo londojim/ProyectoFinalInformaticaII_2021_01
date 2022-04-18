@@ -32,3 +32,7 @@ int Puntaje::getPuntaje()
     return nota;
 }
 
+int Puntaje::setPuntaje(){
+        nota= -1;
+    return nota;
+}

@@ -7,7 +7,7 @@ public:
     Puntaje(QGraphicsItem * parent = 0);
     void aumentar();
     void disminuir();
-
+    int setPuntaje();
     int getPuntaje();
 
 private:

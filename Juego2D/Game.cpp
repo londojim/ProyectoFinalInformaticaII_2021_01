@@ -50,7 +50,7 @@ void Game::menu()
 
     musica->setMedia(QUrl("qrc:/s/menu.mp3"));
     musica->play();
-    numNivel=1;
+    numNivel=3;
 
     QGraphicsTextItem * titleText = new QGraphicsTextItem(QString("Salvando el semestre"));
     QFont titleFont("comic sans",50);
