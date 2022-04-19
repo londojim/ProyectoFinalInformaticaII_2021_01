@@ -233,7 +233,7 @@ void Game::nivel2(){
 
     //CREACIÓN JUGADOR
     estudiante = new Jugador();
-    estudiante->setPos(150  ,500);
+    estudiante->setPos(150,550);
     estudiante->setPixmap(QPixmap(":/imagenes/estudianteM.png"));
     //Movimiento del jugador
     estudiante->setFlag(QGraphicsItem::ItemIsFocusable);
@@ -242,7 +242,7 @@ void Game::nivel2(){
 
     //CREACIÓN DISTRACTORES
     amigo = new AmigoD();
-    amigo->setPos(675,500);
+    amigo->setPos(675,300);
     scene->addItem(amigo);
 
     QObject::connect(timer, SIGNAL(timeout()),amigo, SLOT(Disparar()));

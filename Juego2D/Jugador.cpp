@@ -51,7 +51,7 @@ void Jugador::keyPressEvent(QKeyEvent *e)
             SAsesoria->setMedia(QUrl("qrc:/s/pass.mp3"));
             SAsesoria->play();
             game->nota->aumentar();
-            game->estudiante->setPos(10,500); //Reubicamos el jugador para evitar que detecte otra colision inmediatamente
+            game->estudiante->setPos(600,550); //Reubicamos el jugador para evitar que detecte otra colision inmediatamente
 
             return ;
         }
