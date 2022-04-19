@@ -12,6 +12,7 @@
 #include<vreto.h>
 #include<QMediaplayer>
 #include<profesor.h>
+#include <QMainWindow>
 
 #include <QMainWindow>
 
@@ -27,6 +28,7 @@ public:
     void nivel2();
     void nivel3();
     void felicidades();
+    void Cronometro();
 
    QGraphicsScene *scene;   //Para la escena que tendremos
     Jugador * estudiante;

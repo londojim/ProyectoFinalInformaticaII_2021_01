@@ -21,7 +21,9 @@ QTimer *timerNivel = new QTimer();
 QTimer *timerReto = new QTimer();
 QTimer *timer = new QTimer();   //disparo amigoD
 QTimer *timer1 = new QTimer();  //Dispato otroamiigoD
+QTimer *timerGame = new QTimer();
 
+QList<Distractor *> Distractores;
 
 //Creamos un objeto tipo VReto, que es el que contendrá la escena del reto
 VReto *reto;
@@ -38,8 +40,6 @@ Game::Game(QWidget *parent)
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize(800,600);
-
-    //numNivel=1;     //Añadir validación nota...
 }
 
 
@@ -85,7 +85,10 @@ void Game::start()
     musica->setMedia(QUrl("qrc:/s/Fondo.mp3"));
     musica->play();
     nota = new Puntaje();
+    connect(timerGame,SIGNAL(timeout()),this,SLOT(Cronometro()));
+    //Distractores.clear();
     if(numNivel==1){
+
         nivel1();
     }else if(numNivel==2){
         nivel2();
@@ -182,24 +185,28 @@ void Game::nivel1(){
 
     //CREACIÓN JUGADOR
     estudiante = new Jugador();
-    estudiante->setPos(150,500);
+    estudiante->setPos(0,500);
     estudiante->setPixmap(QPixmap(":/imagenes/estudianteH.png"));
     //Movimiento del jugador
     estudiante->setFlag(QGraphicsItem::ItemIsFocusable);
     estudiante->setFocus();
     scene ->addItem(estudiante);
 
+
     //*CREACIÓN DISTRACTORES
+
     consola = new Distractor();
-    consola->setPos(360,175);
-    scene->addItem(consola);
+    Distractores.push_back(consola);    //agrego 1er consola a la lista de distractores
+    Distractores.at(0)->setPos(360,175);
+    scene->addItem(Distractores.at(0)); //y la agrego a la escena
 
     consola2 = new Distractor();
-    consola2->setPos(450,400);
-    scene->addItem(consola2);
+    Distractores.push_back(consola2);
+    Distractores.at(1)->setPos(450,400);
+    scene->addItem(Distractores.at(1));
 
     amigo = new AmigoD();
-    amigo->setPos(675,280);
+    amigo->setPos(675,350);
     scene->addItem(amigo);
     //DISPAROS DE AMIGO
     QObject::connect(timer, SIGNAL(timeout()),amigo, SLOT(Disparar()));
@@ -249,8 +256,9 @@ void Game::nivel2(){
     timer->start(3000);
 
     consola = new Distractor();
-    consola->setPos(300,350);
-    scene->addItem(consola);
+    Distractores.push_back(consola);    //agrego 1er consola a la lista de distractores
+    Distractores.at(0)->setPos(350,300);
+    scene->addItem(Distractores.at(0)); //y la agrego a la escena
 
     //***********CREACIÓN ASIGNATURAS***************
     mat = new Asignaturas();
@@ -271,8 +279,6 @@ void Game::nivel2(){
     show();
 }
 void Game::nivel3(){
-    //QTimer *timer = new QTimer();
-    //QTimer *timer1 = new QTimer();
     //PINTANDO LA ESCENA NIVEL 3/
     scene->clear();
     setBackgroundBrush(QBrush(QImage(":/imagenes/barrientos.jpg")));
@@ -311,9 +317,11 @@ void Game::nivel3(){
     QObject::connect(timer1, SIGNAL(timeout()),amigo1, SLOT(Disparar()));
     timer1->start(3000);
 
+
     consola = new Distractor();
-    consola->setPos(350,300);
-    scene->addItem(consola);
+    Distractores.push_back(consola);    //agrego 1er consola a la lista de distractores
+    Distractores.at(0)->setPos(350,300);
+    scene->addItem(Distractores.at(0)); //y la agrego a la escena
 
     //***********CREACIÓN ASIGNATURAS***************
     mat = new Asignaturas();
@@ -448,3 +456,12 @@ int Game::Reto(){
     //qDebug()<<"lleva: "<<numIntentos<< "intentos";
 
 }
+/*
+void Game::Cronometro(){
+    if(ui->lcdNumber->intValue()==0 || !time->isActive()){
+        scene->lcdNumber->display(200);
+    }
+    else{
+        scene->lcdNumber->display((scene->lcdNumber->intValue())-1);
+    }
+}*/
