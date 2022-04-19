@@ -5,6 +5,7 @@
 #include<QGraphicsPixmapItem>
 #include <QObject>
 #include<QMediaPlayer>
+#include<math.h>
 
 
 class Drogas: public QObject, public QGraphicsPixmapItem{
@@ -15,6 +16,13 @@ public slots:
     void movDroga();     //Señal conectada al timer para tener un movimiento periodico
 private:
     //QMediaPlayer *STocaDroga;
+    float v=30;
+    float g=10;
+    float t;
+    float alfa=90;
+
+
+
 };
 
 #endif // DROGAS_H

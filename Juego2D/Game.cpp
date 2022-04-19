@@ -19,8 +19,8 @@
 
 QTimer *timerNivel = new QTimer();
 QTimer *timerReto = new QTimer();
-QTimer *timer = new QTimer();
-QTimer *timer1 = new QTimer();
+QTimer *timer = new QTimer();   //disparo amigoD
+QTimer *timer1 = new QTimer();  //Dispato otroamiigoD
 
 
 //Creamos un objeto tipo VReto, que es el que contendrá la escena del reto
@@ -50,7 +50,7 @@ void Game::menu()
 
     musica->setMedia(QUrl("qrc:/s/menu.mp3"));
     musica->play();
-    numNivel=3;
+    numNivel=1;
 
     QGraphicsTextItem * titleText = new QGraphicsTextItem(QString("Salvando el semestre"));
     QFont titleFont("comic sans",50);
@@ -195,11 +195,11 @@ void Game::nivel1(){
     scene->addItem(consola);
 
     consola2 = new Distractor();
-    consola2->setPos(500,450);
+    consola2->setPos(450,400);
     scene->addItem(consola2);
 
     amigo = new AmigoD();
-    amigo->setPos(675,500);
+    amigo->setPos(675,280);
     scene->addItem(amigo);
     //DISPAROS DE AMIGO
     QObject::connect(timer, SIGNAL(timeout()),amigo, SLOT(Disparar()));
@@ -207,12 +207,13 @@ void Game::nivel1(){
 
     //CREACIÓN ASIGNATURAS
     lecto = new Asignaturas();
-    lecto->setPos(200,300);
+    lecto->setPos(200,280);
     scene->addItem(lecto);
 
     english = new Asignaturas();
-    english->setPos(550,220);
+    english->setPos(550,200);
     scene->addItem(english);
+
     QObject::connect(timerNivel, SIGNAL(timeout()),this, SLOT(Nivel()));
     timerNivel->start(1000);
 
@@ -248,7 +249,7 @@ void Game::nivel2(){
     timer->start(3000);
 
     consola = new Distractor();
-    consola->setPos(350,300);
+    consola->setPos(300,350);
     scene->addItem(consola);
 
     //***********CREACIÓN ASIGNATURAS***************
@@ -316,11 +317,11 @@ void Game::nivel3(){
 
     //***********CREACIÓN ASIGNATURAS***************
     mat = new Asignaturas();
-    mat->setPos(350,480);
+    mat->setPos(355,480);
     scene->addItem(mat);
 
     english = new Asignaturas();
-    english->setPos(350,100);
+    english->setPos(345,100);
     scene->addItem(english);
 
     informatica = new Asignaturas();

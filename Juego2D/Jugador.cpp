@@ -45,15 +45,7 @@ void Jugador::keyPressEvent(QKeyEvent *e)
     //Devuelve una lista de todos los elementos que están colisionando con la droga disparada
     for(int i=0, n=colliding_items.size(); i<n; i++ ){ //Mientras i<n: aumente i
         //Si colisiona con estudiante: la calificación baja
-        if(typeid(  *(colliding_items[i])) == typeid(Distractor) ){//typeid retorna tipo de clase/objeto que estamos mirando
-            STocaPacman= new QMediaPlayer();
-            STocaPacman->setMedia(QUrl("qrc:/s/TocaPacman.mp3"));
-            STocaPacman->play();
-            game->nota->disminuir();
-            game->estudiante->setPos(10,y()); //Reubicamos el jugador para evitar que detecte otra colision inmediatamente
 
-            return ;
-        }
         if(typeid(  *(colliding_items[i])) == typeid(Profesor) ){//typeid retorna tipo de clase/objeto que estamos mirando
             SAsesoria= new QMediaPlayer();
             SAsesoria->setMedia(QUrl("qrc:/s/pass.mp3"));

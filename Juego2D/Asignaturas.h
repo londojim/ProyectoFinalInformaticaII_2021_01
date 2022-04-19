@@ -12,16 +12,16 @@ public:
 public slots:
     void movAsignatura();     //Señal conectada al timer para tener un movimiento periodico
 private:
-    bool BArriba;
-    float vx; float vy=0;
-    float ax, ay;
-    float g=0.1;
+    //bool BArriba;
+    float vx; float vy=0;   //Velocidades en los ejes x,y;
+    float ax, ay;           //Aceleraciones en los ejes x,y;
+    float g=0.1; float t = 0.28;
     int masa=1;
-    int k=4;
-    float anchory, anchorx;
-
-    double rad=1;
-    int i =0;
+    int k=4;            //Constante del resorte
+    int fuerzaResorte;  //FuerzaResorte = -k*desplazamiento; desplazamiento es distancia del anclaje a la masa
+    int fuerzasY;
+    float anclajeY;     //Posición del anclaje del resorte en el eje y
+                        //Establecer el valor del anclaje de mood que esté encimita de la posición del objeto
 
 };
 

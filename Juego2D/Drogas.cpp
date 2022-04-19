@@ -44,8 +44,12 @@ void Drogas::movDroga()
             return ;
         }
     }
+    alfa= (alfa*M_PI)/180.0; //grados a radianes
 
-    setPos(x()-10,y());             //Por la ubicación del amigo, la droga irá a la  izquierda
+    setPos(x() -(v* (qCos(alfa)) )*t, y() -(v* (qSin(alfa)))*t+(0.5*g*t*t));
+    t+=0.25;
+
+    //setPos(x()-10,y());             //Por la ubicación del amigo, la droga irá a la  izquierda
     if(pos().x()+pixmap().width()<0)  //Eliminar la droga cuando sale de la escena
     {
         scene()->removeItem(this);
