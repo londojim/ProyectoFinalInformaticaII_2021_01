@@ -21,9 +21,6 @@ private:
     float g=10;
     float t=1;
     float alfa=90;
-
-
-
 };
 
 #endif // DROGAS_H
