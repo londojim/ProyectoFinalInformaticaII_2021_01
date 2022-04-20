@@ -16,13 +16,11 @@ public slots:
     void movDroga();     //Señal conectada al timer para tener un movimiento periodico
 private:
     //QMediaPlayer *STocaDroga;
-    float v=30;
+    float vx=-45;
+    float vy=-40;
     float g=10;
-    float t;
+    float t=1;
     float alfa=90;
-
-
-
 };
 
 #endif // DROGAS_H

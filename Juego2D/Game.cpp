@@ -50,7 +50,7 @@ void Game::menu()
 
     musica->setMedia(QUrl("qrc:/s/menu.mp3"));
     musica->play();
-    numNivel=1;
+    numNivel=3;
 
     QGraphicsTextItem * titleText = new QGraphicsTextItem(QString("Salvando el semestre"));
     QFont titleFont("comic sans",50);
@@ -126,6 +126,7 @@ int Game::Nivel()
         }
         else if(nota->getPuntaje()<0){
             timerNivel->disconnect();
+            timerReto->disconnect();
             GameOver();
             break;
         }
@@ -134,10 +135,12 @@ int Game::Nivel()
     case 3:
         if(nota->getPuntaje()>=60){
             timerNivel->disconnect();
+            timerReto->disconnect();
             felicidades();
         }
         else if(nota->getPuntaje()<0){
             timerNivel->disconnect();
+            timerReto->disconnect();
             GameOver();
             break;
         }
@@ -267,6 +270,8 @@ void Game::nivel2(){
 
     QObject::connect(timerNivel, SIGNAL(timeout()),this, SLOT(Nivel()));
     timerNivel->start(1000);
+    QObject::connect(timerReto, SIGNAL(timeout()),this, SLOT(Reto()));
+    timerReto->start(1000);
 
     show();
 }
@@ -333,7 +338,8 @@ void Game::nivel3(){
     scene->addItem(lecto);
     QObject::connect(timerNivel, SIGNAL(timeout()),this, SLOT(Nivel()));
     timerNivel->start(1000);
-
+    QObject::connect(timerReto, SIGNAL(timeout()),this, SLOT(Reto()));
+    timerReto->start(1000);
     show();
 
 }
