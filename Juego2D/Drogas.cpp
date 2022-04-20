@@ -19,7 +19,7 @@ Drogas::Drogas()
     setPixmap(QPixmap(":/imagenes/drogas.png"));    //Creamos la señal para poder conectar el timer
     QTimer *timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()),this,SLOT(movDroga()));  //La funcion que conectamos se va a ejecutar en cada flaco de reloj del sistema
-    timer->start(80);  //En milisegundos
+    timer->start(150);  //En milisegundos
 
 }
 
@@ -44,8 +44,10 @@ void Drogas::movDroga()
             return ;
         }
     }
+
     vy+=g*t;
     setPos(x()+(vx*t), y()+(vy*t)+(0.5*g*t*t));
+
 
     //setPos(x()-10,y());             //Por la ubicación del amigo, la droga irá a la  izquierda
     if(pos().x()+pixmap().width()<0)  //Eliminar la droga cuando sale de la escena
