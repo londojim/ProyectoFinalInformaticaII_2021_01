@@ -22,6 +22,8 @@ QTimer *timerReto = new QTimer();
 QTimer *timer = new QTimer();   //disparo amigoD
 QTimer *timer1 = new QTimer();  //Dispato otroamiigoD
 
+QList<Distractor *> Distractores;
+QList<Asignaturas *> ListaAsignatura;
 
 //Creamos un objeto tipo VReto, que es el que contendrá la escena del reto
 VReto *reto;
@@ -84,12 +86,14 @@ void Game::start()
     //Musica de fondo
     musica->setMedia(QUrl("qrc:/s/Fondo.mp3"));
     musica->play();
+    Distractores.clear();
+    ListaAsignatura.clear();
+
     nota = new Puntaje();
     if(numNivel==1){
         nivel1();
     }else if(numNivel==2){
         nivel2();
-
     }
     else if(numNivel==3){
         nivel3();
@@ -156,6 +160,7 @@ void Game::GameOver()
     setBackgroundBrush(QBrush(QImage(":/imagenes/GameOver.png")));
     musica->setMedia(QUrl("qrc:/s/menu.mp3"));
     musica->play();
+    numNivel=1;
 
     // crear boton re-intento
     Boton * playButton = new Boton(QString("Jugar"));
@@ -194,13 +199,24 @@ void Game::nivel1(){
 
     //*CREACIÓN DISTRACTORES
     consola = new Distractor();
+    Distractores.push_back(consola);
+    Distractores.at(0)->setPos(360,175);
+    scene->addItem(Distractores.at(0));
+
+    consola2 = new Distractor();
+    Distractores.push_back(consola2);
+    Distractores.at(1)->setPos(450,400);
+    scene->addItem(Distractores.at(1));
+
+    /*
+    consola = new Distractor();
     consola->setPos(360,175);
     scene->addItem(consola);
 
     consola2 = new Distractor();
     consola2->setPos(450,400);
     scene->addItem(consola2);
-
+    */
     amigo = new AmigoD();
     amigo->setPos(675,280);
     scene->addItem(amigo);
@@ -252,9 +268,15 @@ void Game::nivel2(){
     timer->start(3000);
 
     consola = new Distractor();
+    Distractores.push_back(consola);
+    Distractores.at(0)->setPos(300,350);
+    scene->addItem(Distractores.at(0));
+
+/*
+    consola = new Distractor();
     consola->setPos(300,350);
     scene->addItem(consola);
-
+*/
     //***********CREACIÓN ASIGNATURAS***************
     mat = new Asignaturas();
     mat->setPos(85,180);
@@ -317,9 +339,14 @@ void Game::nivel3(){
     timer1->start(3000);
 
     consola = new Distractor();
+    Distractores.push_back(consola);
+    Distractores.at(0)->setPos(350,300);
+    scene->addItem(Distractores.at(0));
+/*
+    consola = new Distractor();
     consola->setPos(350,300);
     scene->addItem(consola);
-
+*/
     //***********CREACIÓN ASIGNATURAS***************
     mat = new Asignaturas();
     mat->setPos(355,480);
