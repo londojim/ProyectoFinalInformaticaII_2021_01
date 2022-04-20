@@ -1,5 +1,7 @@
 QT       += core gui\
         multimedia
+QT+=    widgets
+
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -43,4 +45,4 @@ RESOURCES += \
     S.qrc
 
 FORMS += \
-    dialog.ui
+    VReto.ui

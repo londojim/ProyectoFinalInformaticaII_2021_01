@@ -54,6 +54,7 @@ public:
 
 public slots:
     void start();
+    void exit();
     int Nivel();
     int Reto();
 

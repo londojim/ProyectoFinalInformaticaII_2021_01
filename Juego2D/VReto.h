@@ -7,6 +7,10 @@
 #include <Game.h>
 #include<QMainWindow>
 #include<string>
+#include<QRadioButton>
+#include<QButtonGroup >
+#include<QVBoxLayout>
+
 
 namespace Ui {
 class VReto;
@@ -28,7 +32,11 @@ public:
     void retoMat();
     void retoE();
     void retoInfo();
-
+    QList<QGraphicsTextItem *> textos;
+    QList<QRadioButton *> RButton;
+    QButtonGroup  * Box = new QButtonGroup ;
+    int x=200;
+    int y=150;
    int notaA;
 };
 

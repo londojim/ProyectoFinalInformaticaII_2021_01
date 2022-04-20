@@ -76,7 +76,7 @@ void Game::menu()
     int qxPos = 65;//this->width()/2 -quitButton->boundingRect().width()/2;
     int qyPos = 350;
     quitButton->setPos(qxPos,qyPos);
-    connect(playButton,SIGNAL(click()),this,SLOT(close()));
+    connect(playButton,SIGNAL(click()),this,SLOT(exit()));
     scene->addItem(quitButton);
 
 }
@@ -100,6 +100,11 @@ void Game::start()
 
     }
 
+}
+
+void Game::exit()
+{
+    //scene->deleteLater();
 }
 int Game::Nivel()
 {
@@ -175,7 +180,7 @@ void Game::GameOver()
     int qxPos = 65;//this->width()/2 -quitButton->boundingRect().width()/2;
     int qyPos = 350;
     quitButton->setPos(qxPos,qyPos);
-    connect(playButton,SIGNAL(click()),this,SLOT(close()));
+    connect(playButton,SIGNAL(click()),this,SLOT(exit()));
     scene->addItem(quitButton);
 
 }
