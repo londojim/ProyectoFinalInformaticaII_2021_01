@@ -190,7 +190,7 @@ void Game::nivel1(){
 
     //CREACIÓN JUGADOR
     estudiante = new Jugador();
-    estudiante->setPos(150,500);
+    estudiante->setPos(120,520);
     estudiante->setPixmap(QPixmap(":/imagenes/estudianteH.png"));
     //Movimiento del jugador
     estudiante->setFlag(QGraphicsItem::ItemIsFocusable);
@@ -200,7 +200,7 @@ void Game::nivel1(){
     //*CREACIÓN DISTRACTORES
     consola = new Distractor();
     Distractores.push_back(consola);
-    Distractores.at(0)->setPos(360,175);
+    Distractores.at(0)->setPos(350,175);
     scene->addItem(Distractores.at(0));
 
     consola2 = new Distractor();
@@ -208,15 +208,6 @@ void Game::nivel1(){
     Distractores.at(1)->setPos(450,400);
     scene->addItem(Distractores.at(1));
 
-    /*
-    consola = new Distractor();
-    consola->setPos(360,175);
-    scene->addItem(consola);
-
-    consola2 = new Distractor();
-    consola2->setPos(450,400);
-    scene->addItem(consola2);
-    */
     amigo = new AmigoD();
     amigo->setPos(675,280);
     scene->addItem(amigo);
@@ -226,12 +217,14 @@ void Game::nivel1(){
 
     //CREACIÓN ASIGNATURAS
     lecto = new Asignaturas();
-    lecto->setPos(200,280);
-    scene->addItem(lecto);
+    ListaAsignatura.push_back(lecto);
+    ListaAsignatura.at(0)->setPos(200,280);
+    scene->addItem(ListaAsignatura.at(0));
 
     english = new Asignaturas();
-    english->setPos(550,200);
-    scene->addItem(english);
+    ListaAsignatura.push_back(english);
+    ListaAsignatura.at(1)->setPos(550,200);
+    scene->addItem(ListaAsignatura.at(1));
 
     QObject::connect(timerNivel, SIGNAL(timeout()),this, SLOT(Nivel()));
     timerNivel->start(1000);
@@ -242,7 +235,6 @@ void Game::nivel1(){
     show();
 }
 void Game::nivel2(){
-    //QTimer *timer = new QTimer();
     //PINTANDO LA ESCENA NIVEL 2/
     scene->clear();
     setBackgroundBrush(QBrush(QImage(":/imagenes/biblioteca.png")));
@@ -252,7 +244,7 @@ void Game::nivel2(){
 
     //CREACIÓN JUGADOR
     estudiante = new Jugador();
-    estudiante->setPos(150,550);
+    estudiante->setPos(580,450);
     estudiante->setPixmap(QPixmap(":/imagenes/estudianteM.png"));
     //Movimiento del jugador
     estudiante->setFlag(QGraphicsItem::ItemIsFocusable);
@@ -269,26 +261,25 @@ void Game::nivel2(){
 
     consola = new Distractor();
     Distractores.push_back(consola);
-    Distractores.at(0)->setPos(300,350);
+    Distractores.at(0)->setPos(350,300);
     scene->addItem(Distractores.at(0));
 
-/*
-    consola = new Distractor();
-    consola->setPos(300,350);
-    scene->addItem(consola);
-*/
     //***********CREACIÓN ASIGNATURAS***************
     mat = new Asignaturas();
-    mat->setPos(85,180);
-    scene->addItem(mat);
+    ListaAsignatura.push_back(mat);
+    ListaAsignatura.at(0)->setPos(85,180);
+    scene->addItem(ListaAsignatura.at(0));
+
 
     english = new Asignaturas();
-    english->setPos(350,100);
-    scene->addItem(english);
+    ListaAsignatura.push_back(english);
+    ListaAsignatura.at(1)->setPos(350,100);
+    scene->addItem(ListaAsignatura.at(1));
 
     informatica = new Asignaturas();
-    informatica->setPos(600,50);
-    scene->addItem(informatica);
+    ListaAsignatura.push_back(informatica);
+    ListaAsignatura.at(2)->setPos(600,50);
+    scene->addItem(ListaAsignatura.at(2));
 
     QObject::connect(timerNivel, SIGNAL(timeout()),this, SLOT(Nivel()));
     timerNivel->start(1000);
@@ -298,8 +289,6 @@ void Game::nivel2(){
     show();
 }
 void Game::nivel3(){
-    //QTimer *timer = new QTimer();
-    //QTimer *timer1 = new QTimer();
     //PINTANDO LA ESCENA NIVEL 3/
     scene->clear();
     setBackgroundBrush(QBrush(QImage(":/imagenes/barrientos.jpg")));
@@ -340,29 +329,30 @@ void Game::nivel3(){
 
     consola = new Distractor();
     Distractores.push_back(consola);
-    Distractores.at(0)->setPos(350,300);
+    Distractores.at(0)->setPos(355,230);
     scene->addItem(Distractores.at(0));
-/*
-    consola = new Distractor();
-    consola->setPos(350,300);
-    scene->addItem(consola);
-*/
+
     //***********CREACIÓN ASIGNATURAS***************
     mat = new Asignaturas();
-    mat->setPos(355,480);
-    scene->addItem(mat);
+    ListaAsignatura.push_back(mat);
+    ListaAsignatura.at(0)->setPos(360,480);
+    scene->addItem(ListaAsignatura.at(0));
 
     english = new Asignaturas();
-    english->setPos(345,100);
-    scene->addItem(english);
+    ListaAsignatura.push_back(english);
+    ListaAsignatura.at(1)->setPos(345,100);
+    scene->addItem(ListaAsignatura.at(1));
 
     informatica = new Asignaturas();
-    informatica->setPos(600,50);
-    scene->addItem(informatica);
+    ListaAsignatura.push_back(informatica);
+    ListaAsignatura.at(2)->setPos(600,50);
+    scene->addItem(ListaAsignatura.at(2));
 
     lecto = new Asignaturas();
-    lecto->setPos(150,300);
-    scene->addItem(lecto);
+    ListaAsignatura.push_back(lecto);
+    ListaAsignatura.at(3)->setPos(150,300);
+    scene->addItem(ListaAsignatura.at(3));
+
     QObject::connect(timerNivel, SIGNAL(timeout()),this, SLOT(Nivel()));
     timerNivel->start(1000);
     QObject::connect(timerReto, SIGNAL(timeout()),this, SLOT(Reto()));

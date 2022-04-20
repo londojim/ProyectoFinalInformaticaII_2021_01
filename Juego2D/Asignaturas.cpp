@@ -26,14 +26,13 @@ void Asignaturas::movAsignatura()
         anclajeY=130;
     } else if(x()==350){
         anclajeY=130;
-    } else if(x()==355){
-        anclajeY=530;
+    } else if(x()==360){
+        anclajeY=500;
     } else if(x()==550){
         anclajeY=230;
     }else if(x()==600){
         anclajeY=80;
     }
-    //anclajeY=245;//_anclajeY;//300;
     fuerzaResorte = -k*(y()-anclajeY);
     fuerzasY=fuerzaResorte+masa*g;
     ay= fuerzasY/masa;
