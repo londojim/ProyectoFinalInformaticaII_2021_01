@@ -44,7 +44,7 @@ void Drogas::movDroga()
             return ;
         }
     }
-    vy+=g*t ;
+    vy+=g*t;
     setPos(x()+(vx*t), y()+(vy*t)+(0.5*g*t*t));
 
     //setPos(x()-10,y());             //Por la ubicación del amigo, la droga irá a la  izquierda

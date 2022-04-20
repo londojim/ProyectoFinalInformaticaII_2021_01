@@ -221,7 +221,7 @@ void Game::nivel1(){
     timerNivel->start(1000);
 
     QObject::connect(timerReto, SIGNAL(timeout()),this, SLOT(Reto()));
-    timerReto->start(1000);
+    timerReto->start(800);
 
     show();
 }
