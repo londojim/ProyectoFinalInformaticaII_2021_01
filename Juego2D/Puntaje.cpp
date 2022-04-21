@@ -14,7 +14,7 @@ Puntaje::Puntaje(QGraphicsItem *parent)
 }
 void Puntaje::aumentar()
 {
-    nota+=10;
+    nota+=20;
     setPlainText(QString("Score: ")+QString::number(nota));
 }
 

@@ -3,7 +3,8 @@
 #include<mainwindow.h>
 #include<string>
 #include <QRadioButton>
-
+#include<QTimer>
+#include<Boton.h>
 
 extern Game *game;
 
@@ -17,46 +18,28 @@ VReto::VReto(QWidget *parent)
     setScene(ui);    //Para poder visualizar la escena
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-}
+
+    // crear boton enviar respuesta
+    Boton * playButton = new Boton(QString("Enviar"));
+    int bxPos = 150;//this->width()/2 -playButton->boundingRect().width()/2
+    int byPos = 270;
+    playButton->setPos(bxPos,byPos);
+    connect(playButton,SIGNAL(click()),this,SLOT(marcaRta()));
+    ui->addItem(playButton);
+    }
 
 VReto::~VReto()
 {
     delete ui;
 }
 
-
+void VReto::marcaRta()
+{   //textos.clear();
+    //RButton.clear();
+    //delete ui;
+    this->close();
+}
 void VReto::retoLecto(){
-    /*QGraphicsTextItem *As = new QGraphicsTextItem;
-    As->setPlainText(QString("Reto de lectoescritura: "));   //+QString::number(game->nota->getPuntaje()));
-    As->setDefaultTextColor(Qt::black);
-    As->setFont(QFont("Trajan Pro",15));
-    As->setPos(20,15);
-    ui->addItem(As);
-  Box->addButton(RButton.at(0));
-                        Box->addButton(RButton.at(1));
-                        Box->addButton(RButton.at(2));
-                        Box->addButton(RButton.at(3));
-                        ui->addWidget(RButton.at(0));
-                        ui->addWidget(RButton.at(3));
-
-                QVBoxLayout *layout = new QVBoxLayout;
-                layout->addWidget(RButton.at(0));
-                layout->addWidget(RButton.at(1));
-                layout->addWidget(RButton.at(2));
-                layout->addWidget(RButton.at(3));
-
-                ui->addWidget(Box);
-
-    }
-    else if(game->numNivel==3){
-        textos.push_back(new QGraphicsTextItem);
-        textos.at(1)->setPlainText(QString("¿Cómo se denominan las palabras que tienen \n igual escritura, pero diferente significado? "));
-        textos.at(1)->setDefaultTextColor(Qt::black);
-        textos.at(1)->setFont(QFont("Trajan Pro",15));
-        textos.at(1)->setPos(40,80);
-        ui->addItem(textos.at(1));
-    }
-*/
     textos.push_back(new QGraphicsTextItem);
     textos.at(0)->setPlainText(QString("Reto de lectoescritura: "));   //+QString::number(game->nota->getPuntaje()));
     textos.at(0)->setDefaultTextColor(Qt::black);
@@ -83,8 +66,17 @@ void VReto::retoLecto(){
             RButton.at(i)->setGeometry(x,y,100,20);
             ui->addWidget(RButton.at(i));
         }
-        RButton.at(0)->setEnabled(true);
-}
+
+
+
+    }    else if(game->numNivel==3){
+        textos.push_back(new QGraphicsTextItem);
+        textos.at(1)->setPlainText(QString("¿Cómo se denominan las palabras que tienen \n igual escritura, pero diferente significado? "));
+        textos.at(1)->setDefaultTextColor(Qt::black);
+        textos.at(1)->setFont(QFont("Trajan Pro",15));
+        textos.at(1)->setPos(40,80);
+        ui->addItem(textos.at(1));
+    }
 }
 void VReto::retoMat(){
     QGraphicsTextItem *As = new QGraphicsTextItem;

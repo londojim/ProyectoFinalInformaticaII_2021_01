@@ -38,6 +38,8 @@ public:
     int x=200;
     int y=150;
    int notaA;
+public slots:
+   void marcaRta();
 };
 
 

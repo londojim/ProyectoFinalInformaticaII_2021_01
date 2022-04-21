@@ -104,7 +104,8 @@ void Game::start()
 
 void Game::exit()
 {
-    //scene->deleteLater();
+    scene->clear();
+this->close();
 }
 int Game::Nivel()
 {
