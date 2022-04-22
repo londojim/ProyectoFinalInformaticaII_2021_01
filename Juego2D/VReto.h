@@ -10,6 +10,7 @@
 #include<QRadioButton>
 #include<QButtonGroup >
 #include<QVBoxLayout>
+#include<Boton.h>
 
 
 namespace Ui {
@@ -39,6 +40,9 @@ public:
     int y=150;
     int notaA;
     int rta=0;
+    QMediaPlayer *Acierto;
+    Boton * playButton = new Boton(QString("Enviar"));
+
 public slots:
     void enviarRta();
 };

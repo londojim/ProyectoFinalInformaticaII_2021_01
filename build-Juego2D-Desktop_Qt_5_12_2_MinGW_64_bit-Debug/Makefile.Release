@@ -887,6 +887,9 @@ release/moc_Game.cpp: ../Juego2D/Game.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlayout.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlayoutitem.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgridlayout.h \
+		../Juego2D/Boton.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QGraphicsSceneMouseEvent \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgraphicssceneevent.h \
 		release/moc_predefs.h \
 		C:/Qt/5.12.2/mingw73_64/bin/moc.exe
 	C:\Qt\5.12.2\mingw73_64\bin\moc.exe $(DEFINES) --include "C:/Users/Katherin/Desktop/PROYECTO FINAL/build-Juego2D-Desktop_Qt_5_12_2_MinGW_64_bit-Debug/release/moc_predefs.h" -IC:/Qt/5.12.2/mingw73_64/mkspecs/win32-g++ -I"C:/Users/Katherin/Desktop/PROYECTO FINAL/Juego2D" -IC:/Qt/5.12.2/mingw73_64/include -IC:/Qt/5.12.2/mingw73_64/include/QtMultimedia -IC:/Qt/5.12.2/mingw73_64/include/QtWidgets -IC:/Qt/5.12.2/mingw73_64/include/QtGui -IC:/Qt/5.12.2/mingw73_64/include/QtANGLE -IC:/Qt/5.12.2/mingw73_64/include/QtNetwork -IC:/Qt/5.12.2/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\Juego2D\Game.h -o release\moc_Game.cpp
@@ -1284,6 +1287,9 @@ release/moc_vreto.cpp: ../Juego2D/vreto.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlayout.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlayoutitem.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgridlayout.h \
+		../Juego2D/Boton.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QGraphicsSceneMouseEvent \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgraphicssceneevent.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtMultimedia/QMediaplayer \
 		../Juego2D/profesor.h \
 		release/moc_predefs.h \
@@ -1794,6 +1800,9 @@ release/Distractor.o: ../Juego2D/Distractor.cpp ../Juego2D/Distractor.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlayout.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlayoutitem.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgridlayout.h \
+		../Juego2D/Boton.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QGraphicsSceneMouseEvent \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgraphicssceneevent.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtMultimedia/QMediaplayer \
 		../Juego2D/profesor.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Distractor.o ..\Juego2D\Distractor.cpp
@@ -1963,6 +1972,9 @@ release/Drogas.o: ../Juego2D/Drogas.cpp ../Juego2D/Drogas.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlayout.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlayoutitem.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgridlayout.h \
+		../Juego2D/Boton.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QGraphicsSceneMouseEvent \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgraphicssceneevent.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtMultimedia/QMediaplayer \
 		../Juego2D/profesor.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/QBrush \
@@ -2128,6 +2140,9 @@ release/Game.o: ../Juego2D/Game.cpp ../Juego2D/Game.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlayout.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlayoutitem.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgridlayout.h \
+		../Juego2D/Boton.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QGraphicsSceneMouseEvent \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgraphicssceneevent.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtMultimedia/QMediaplayer \
 		../Juego2D/profesor.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QTimer \
@@ -2136,9 +2151,6 @@ release/Game.o: ../Juego2D/Game.cpp ../Juego2D/Game.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/QBrush \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/QImage \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/QFont \
-		../Juego2D/Boton.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QGraphicsSceneMouseEvent \
-		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgraphicssceneevent.h \
 		../Juego2D/Drogas.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Game.o ..\Juego2D\Game.cpp
@@ -2303,6 +2315,9 @@ release/Jugador.o: ../Juego2D/Jugador.cpp ../Juego2D/Jugador.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlayout.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlayoutitem.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgridlayout.h \
+		../Juego2D/Boton.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QGraphicsSceneMouseEvent \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgraphicssceneevent.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtMultimedia/QMediaplayer \
 		../Juego2D/profesor.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Jugador.o ..\Juego2D\Jugador.cpp
@@ -2566,6 +2581,9 @@ release/main.o: ../Juego2D/main.cpp C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QA
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlayout.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlayoutitem.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgridlayout.h \
+		../Juego2D/Boton.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QGraphicsSceneMouseEvent \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgraphicssceneevent.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtMultimedia/QMediaplayer \
 		../Juego2D/profesor.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o ..\Juego2D\main.cpp
@@ -2850,11 +2868,15 @@ release/vreto.o: ../Juego2D/vreto.cpp ../Juego2D/vreto.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlayout.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlayoutitem.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgridlayout.h \
+		../Juego2D/Boton.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QGraphicsSceneMouseEvent \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgraphicssceneevent.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/QFont \
 		../Juego2D/mainwindow.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QTimer \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/qtimer.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qbasictimer.h
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qbasictimer.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\vreto.o ..\Juego2D\vreto.cpp
 
 release/qrc_S.o: release/qrc_S.cpp 
