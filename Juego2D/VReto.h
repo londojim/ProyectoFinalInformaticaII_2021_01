@@ -24,7 +24,7 @@ public:
     explicit VReto(QWidget *parent = nullptr);
     ~VReto();
     QGraphicsScene *ui;
-     //Indica que asignatura es
+    //Indica que asignatura es
 
     void setNum();
 
@@ -37,9 +37,10 @@ public:
     QButtonGroup  * Box = new QButtonGroup ;
     int x=200;
     int y=150;
-   int notaA;
+    int notaA;
+    int rta=0;
 public slots:
-   void marcaRta();
+    void enviarRta();
 };
 
 

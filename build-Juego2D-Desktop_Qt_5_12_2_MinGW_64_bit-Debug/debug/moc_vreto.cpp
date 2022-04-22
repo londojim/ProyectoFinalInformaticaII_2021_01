@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_VReto_t {
     QByteArrayData data[3];
-    char stringdata0[16];
+    char stringdata0[17];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,11 +32,11 @@ struct qt_meta_stringdata_VReto_t {
 static const qt_meta_stringdata_VReto_t qt_meta_stringdata_VReto = {
     {
 QT_MOC_LITERAL(0, 0, 5), // "VReto"
-QT_MOC_LITERAL(1, 6, 8), // "marcaRta"
-QT_MOC_LITERAL(2, 15, 0) // ""
+QT_MOC_LITERAL(1, 6, 9), // "enviarRta"
+QT_MOC_LITERAL(2, 16, 0) // ""
 
     },
-    "VReto\0marcaRta\0"
+    "VReto\0enviarRta\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -68,7 +68,7 @@ void VReto::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void 
         auto *_t = static_cast<VReto *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->marcaRta(); break;
+        case 0: _t->enviarRta(); break;
         default: ;
         }
     }

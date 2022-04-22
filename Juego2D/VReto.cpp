@@ -5,6 +5,7 @@
 #include <QRadioButton>
 #include<QTimer>
 #include<Boton.h>
+#include<QDebug>
 
 extern Game *game;
 
@@ -24,19 +25,25 @@ VReto::VReto(QWidget *parent)
     int bxPos = 150;//this->width()/2 -playButton->boundingRect().width()/2
     int byPos = 270;
     playButton->setPos(bxPos,byPos);
-    connect(playButton,SIGNAL(click()),this,SLOT(marcaRta()));
+    connect(playButton,SIGNAL(click()),this,SLOT(enviarRta()));
     ui->addItem(playButton);
-    }
+}
 
 VReto::~VReto()
 {
     delete ui;
 }
 
-void VReto::marcaRta()
+void VReto::enviarRta()
 {   //textos.clear();
     //RButton.clear();
     //delete ui;
+    if (RButton.at(rta)->isChecked()) {
+        game->nota->aumentar();
+        qDebug()<<"MARCÓ LA RESPUESTA CORRECTA";
+    }
+    else{
+    qDebug()<<"Envia rta xxx  ";}
     this->close();
 }
 void VReto::retoLecto(){
@@ -67,8 +74,7 @@ void VReto::retoLecto(){
             ui->addWidget(RButton.at(i));
         }
 
-
-
+        rta=3;
     }    else if(game->numNivel==3){
         textos.push_back(new QGraphicsTextItem);
         textos.at(1)->setPlainText(QString("¿Cómo se denominan las palabras que tienen \n igual escritura, pero diferente significado? "));
@@ -109,8 +115,7 @@ void VReto::setNum()
 {
     this->notaA = game->nota->getPuntaje();
     ui->addText("Nivel " + QString::number(game->numNivel))->setPos(475,10);
-    game->nota->aumentar();
+    //game->nota->aumentar();
     game->numIntentos++;
-
 
 }
