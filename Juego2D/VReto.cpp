@@ -38,6 +38,7 @@ VReto::~VReto()
 void VReto::enviarRta()
 {
     if (RButton.at(rta)->isChecked()) {
+        if(game->numNivel==1){game->nota->aumentar();}
         game->nota->aumentar();
         qDebug()<<"MARCÓ LA RESPUESTA CORRECTA";
         Acierto->setMedia(QUrl("qrc:/s/pass.mp3"));
@@ -104,7 +105,7 @@ void VReto::retoLecto(){
             ui->addWidget(RButton.at(i));
         }
 
-        rta=2;
+        rta=1;
     }
 }
 void VReto::retoMat(){
@@ -123,14 +124,14 @@ void VReto::retoMat(){
         textos.at(1)->setFont(QFont("Trajan Pro",15));
         textos.at(1)->setPos(40,80);
         ui->addItem(textos.at(1));
-        for(int i=0; i<4; i++){
+        for(int i=0; i<3; i++){
             RButton.push_back(new QRadioButton);
         }
         RButton.at(0)->setText("La paja");
         RButton.at(1)->setText("El hierro");
         RButton.at(2)->setText("Pesan lo mismo");
-        RButton.at(3)->setText("No se puede comparar su peso");
-        for(int i=0; i<4; i++){
+
+        for(int i=0; i<3; i++){
             y+=20;
             RButton.at(i)->setGeometry(x,y,100,20);
             ui->addWidget(RButton.at(i));
@@ -138,7 +139,7 @@ void VReto::retoMat(){
         rta=2;
     }    else if(game->numNivel==3){
         textos.push_back(new QGraphicsTextItem);
-        textos.at(1)->setPlainText(QString("Son las doce de la mañana, hora de mis pastillas. Me tengo que tomar 4 pastillas, una cada 2 horas.\n ¿A qué hora me tomaré la última?"));
+        textos.at(1)->setPlainText(QString("Son las doce de la mañana, hora de mis pastillas. \nMe tengo que tomar 4 pastillas, una cada 2 horas.\n ¿A qué hora me tomaré la última?"));
         textos.at(1)->setDefaultTextColor(Qt::black);
         textos.at(1)->setFont(QFont("Trajan Pro",15));
         textos.at(1)->setPos(40,80);
@@ -170,9 +171,9 @@ void VReto::retoE(){
 
     if(game->numNivel==1){
         textos.push_back(new QGraphicsTextItem);
-        textos.at(1)->setPlainText(QString("Select the option that correctly \nanswers the question. Suppose you like apples\n Do you like apples? : "));   //+QString::number(game->nota->getPuntaje()));
+        textos.at(1)->setPlainText(QString("Select the option that correctly answers the question. \nSuppose you like apples\n Do you like apples? : "));   //+QString::number(game->nota->getPuntaje()));
         textos.at(1)->setDefaultTextColor(Qt::black);
-        textos.at(1)->setFont(QFont("Trajan Pro",15));
+        textos.at(1)->setFont(QFont("Trajan Pro",12));
         textos.at(1)->setPos(40,80);
         ui->addItem(textos.at(1));
         for(int i=0; i<4; i++){
@@ -191,9 +192,9 @@ void VReto::retoE(){
     }
     else if(game->numNivel==2){
         textos.push_back(new QGraphicsTextItem);
-        textos.at(1)->setPlainText(QString("Select the option that correctly\n completes the sentence \n How ____ money does she owe you? : "));   //+QString::number(game->nota->getPuntaje()));
+        textos.at(1)->setPlainText(QString("Select the option that correctly completes the sentence \n How ____ money does she owe you? : "));   //+QString::number(game->nota->getPuntaje()));
         textos.at(1)->setDefaultTextColor(Qt::black);
-        textos.at(1)->setFont(QFont("Trajan Pro",15));
+        textos.at(1)->setFont(QFont("Trajan Pro",12));
         textos.at(1)->setPos(40,80);
         ui->addItem(textos.at(1));
         for(int i=0; i<4; i++){
@@ -211,9 +212,9 @@ void VReto::retoE(){
         rta=3;
     }    else if(game->numNivel==3){
         textos.push_back(new QGraphicsTextItem);
-        textos.at(1)->setPlainText(QString("Select the option that correctly \nanswers the question \n Did she watch the film yesterday? "));
+        textos.at(1)->setPlainText(QString("Select the option that correctly answers the question \n Did she watch the film yesterday? "));
         textos.at(1)->setDefaultTextColor(Qt::black);
-        textos.at(1)->setFont(QFont("Trajan Pro",15));
+        textos.at(1)->setFont(QFont("Trajan Pro",12));
         textos.at(1)->setPos(40,80);
         ui->addItem(textos.at(1));
 
